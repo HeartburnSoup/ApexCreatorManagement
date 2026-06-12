@@ -18,13 +18,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Apex Creator Management",
   url: SITE_URL,
-  email: "hello@apexcreatormanagement.com",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Stroudsburg",
-    addressRegion: "PA",
-    addressCountry: "US",
-  },
+  email: "talent@apexcreatormanagement.com",
   sameAs: ["https://instagram.com/apexcreatormanagement"],
 };
 

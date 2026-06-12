@@ -52,9 +52,29 @@ npm uninstall jimp
 5. Add custom domains: `apexcreatormanagement.com` and `www.apexcreatormanagement.com`.
 6. Configure DNS at your registrar using Vercel's records; set one domain as primary and redirect the other.
 
-### Email
+### Contact form (Resend)
 
-Contact email `hello@apexcreatormanagement.com` requires separate MX/DNS setup (Google Workspace, Zoho, etc.) — not handled by Vercel.
+Submissions are sent via [Resend](https://resend.com) to `talent@apexcreatormanagement.com`.
+
+**Vercel environment variables** (Project → Settings → Environment Variables):
+
+| Variable | Required | Example |
+|----------|----------|---------|
+| `RESEND_API_KEY` | Yes | `re_xxxxxxxx` |
+| `RESEND_FROM_EMAIL` | No | `Apex Creator Management <noreply@apexcreatormanagement.com>` |
+| `CONTACT_TO_EMAIL` | No | `talent@apexcreatormanagement.com` |
+
+Copy `.env.example` to `.env` for local testing.
+
+**Resend checklist:**
+
+1. Domain `apexcreatormanagement.com` verified in Resend (DNS records added at your registrar).
+2. API key created and added to Vercel as `RESEND_API_KEY`.
+3. `RESEND_FROM_EMAIL` uses an address on your verified domain (e.g. `noreply@apexcreatormanagement.com`).
+4. To **receive** mail at `talent@apexcreatormanagement.com`, set up MX records separately (Google Workspace, Zoho, Proton Mail, etc.) — Resend sends *to* that address but does not host the inbox unless you configure inbound separately.
+
+After adding env vars on Vercel, redeploy the project.
+
 
 ## License
 

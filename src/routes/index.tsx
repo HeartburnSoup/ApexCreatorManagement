@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
+import { ContactForm } from "@/components/ContactForm";
+
 const SITE_URL = "https://apexcreatormanagement.com";
 const HERO_IMAGE = "/influencer-management-agency-skyscraper-perspective.jpg";
 
@@ -310,38 +312,28 @@ function Index() {
 
         <section id="contact" className="py-32">
           <div className="container mx-auto px-6">
-            <div className="max-w-4xl">
+            <div className="max-w-5xl">
               <h2 className="text-5xl md:text-7xl font-extrabold uppercase tracking-tighter mb-12 leading-[0.9]">
                 Ready to <br />elevate your brand?
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <div>
                   <p className="text-muted-foreground mb-8 max-w-md text-pretty">
-                    For creator representation, partnership opportunities, or brand collaborations, contact us today. Our team typically responds within 1–2 business days.
+                    For creator representation, partnership opportunities, or brand collaborations, send us a message below. Our team typically responds within 1–2 business days.
                   </p>
-                  <div className="space-y-4 font-mono text-sm">
+                  <div className="space-y-4 font-mono text-sm mb-10">
                     <p className="flex">
                       <span className="text-primary mr-3 w-6">E.</span>
-                      <a href="mailto:hello@apexcreatormanagement.com" className="hover:text-primary transition-colors break-all">
-                        hello@apexcreatormanagement.com
+                      <a href="mailto:talent@apexcreatormanagement.com" className="hover:text-primary transition-colors break-all">
+                        talent@apexcreatormanagement.com
                       </a>
                     </p>
-                    <p className="flex">
-                      <span className="text-primary mr-3 w-6">P.</span>
-                      <a href="tel:+15555555555" className="hover:text-primary transition-colors">(555) 555-5555</a>
-                    </p>
-                    <p className="flex">
-                      <span className="text-primary mr-3 w-6">A.</span>
-                      <span>Stroudsburg, Pennsylvania</span>
-                    </p>
                   </div>
-                </div>
-                <div className="flex flex-col justify-end">
                   <a
                     href="https://instagram.com/apexcreatormanagement"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-2xl md:text-3xl font-bold uppercase tracking-tight group flex items-center"
+                    className="text-2xl md:text-3xl font-bold uppercase tracking-tight group inline-flex items-center"
                   >
                     @apexcreatormanagement
                     <span className="ml-4 text-primary group-hover:translate-x-2 transition-transform">→</span>
@@ -349,6 +341,9 @@ function Index() {
                   <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mt-3">
                     Follow on Instagram
                   </p>
+                </div>
+                <div className="border border-border p-8 bg-secondary/20">
+                  <ContactForm />
                 </div>
               </div>
             </div>
@@ -360,8 +355,7 @@ function Index() {
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
           <p>© {new Date().getFullYear()} Apex Creator Management. All Rights Reserved.</p>
           <div className="flex gap-8">
-            <span>Stroudsburg, PA</span>
-            <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+            <a href="mailto:talent@apexcreatormanagement.com" className="hover:text-primary transition-colors">Contact</a>
           </div>
         </div>
       </footer>
