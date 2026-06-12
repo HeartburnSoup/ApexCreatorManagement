@@ -7,7 +7,7 @@ type ApexLogoProps = {
 };
 
 const BRAND_CREAM = "#EEEBE0";
-const BRAND_TEAL = "#193842";
+const BRAND_BLUE = "#1A3350";
 
 const sizeMap = {
   sm: "w-10 h-10",
@@ -67,9 +67,9 @@ export function ApexLogo({ className = "", animated = false, size = "md" }: Apex
             ))}
           </clipPath>
           <linearGradient id={`${uid}-water`} x1="0" y1="1" x2="0" y2="0">
-            <stop offset="0%" stopColor="#0f2a32" />
-            <stop offset="45%" stopColor={BRAND_TEAL} />
-            <stop offset="100%" stopColor="#2a5560" stopOpacity="0.9" />
+            <stop offset="0%" stopColor="#0f2238" />
+            <stop offset="45%" stopColor={BRAND_BLUE} />
+            <stop offset="100%" stopColor="#3a5f82" stopOpacity="0.9" />
           </linearGradient>
           <linearGradient id={`${uid}-surface`} x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
@@ -90,7 +90,7 @@ export function ApexLogo({ className = "", animated = false, size = "md" }: Apex
                 y1={0}
                 x2={drop.x}
                 y2={36}
-                stroke={BRAND_TEAL}
+                stroke={BRAND_BLUE}
                 strokeWidth={8}
                 strokeLinecap="round"
                 opacity={0.55}

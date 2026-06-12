@@ -227,14 +227,14 @@ function Index() {
                 <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 text-pretty leading-relaxed">
                   For creator representation, partnership opportunities, or brand collaborations, send us a message. We typically respond within 1–2 business days.
                 </p>
-                <p className="text-base font-mono">
-                  <span className="text-primary font-bold">E.</span>{" "}
+                <p className="text-base sm:text-lg font-medium">
+                  <span className="text-primary font-bold">Email</span>{" "}
                   <a href="mailto:talent@apexcreatormanagement.com" className="hover:text-primary transition-colors break-all">
                     talent@apexcreatormanagement.com
                   </a>
                 </p>
               </div>
-              <div className="glass rounded-2xl p-5 sm:p-8 shadow-xl">
+              <div className="glass rounded-3xl p-6 sm:p-8 shadow-xl">
                 <ContactForm />
               </div>
             </div>

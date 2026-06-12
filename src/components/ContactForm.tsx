@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { cn } from "@/lib/utils";
 
 type FormState = {
   name: string;
@@ -19,6 +20,15 @@ const initialState: FormState = {
   inquiryType: "creator",
   message: "",
 };
+
+const inquiryOptions = [
+  { value: "creator" as const, label: "Creator representation" },
+  { value: "brand" as const, label: "Brand partnership" },
+  { value: "general" as const, label: "General inquiry" },
+];
+
+const fieldClass =
+  "h-12 rounded-xl border-border/70 bg-card px-4 text-base shadow-sm transition-all placeholder:text-muted-foreground focus-visible:border-primary/40 focus-visible:ring-4 focus-visible:ring-primary/10";
 
 export function ContactForm() {
   const [form, setForm] = useState<FormState>(initialState);
@@ -41,23 +51,24 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div className="space-y-2">
-        <Label htmlFor="name" className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+        <Label htmlFor="name" className="text-sm font-semibold text-foreground/80">
           Name
         </Label>
         <Input
           id="name"
           name="name"
           required
+          placeholder="Your name"
           value={form.name}
           onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
-          className="rounded-sm border-border bg-background"
+          className={fieldClass}
         />
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="email" className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+        <Label htmlFor="email" className="text-sm font-semibold text-foreground/80">
           Email
         </Label>
         <Input
@@ -65,37 +76,36 @@ export function ContactForm() {
           name="email"
           type="email"
           required
+          placeholder="you@example.com"
           value={form.email}
           onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
-          className="rounded-sm border-border bg-background"
+          className={fieldClass}
         />
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="inquiryType" className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-          Inquiry type
-        </Label>
-        <select
-          id="inquiryType"
-          name="inquiryType"
-          required
-          value={form.inquiryType}
-          onChange={(e) =>
-            setForm((prev) => ({
-              ...prev,
-              inquiryType: e.target.value as FormState["inquiryType"],
-            }))
-          }
-          className="flex h-9 w-full rounded-sm border border-input bg-background px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-        >
-          <option value="creator">Creator representation</option>
-          <option value="brand">Brand partnership</option>
-          <option value="general">General inquiry</option>
-        </select>
+        <Label className="text-sm font-semibold text-foreground/80">Inquiry type</Label>
+        <div className="grid gap-2 sm:flex sm:flex-wrap">
+          {inquiryOptions.map((option) => (
+            <button
+              key={option.value}
+              type="button"
+              onClick={() => setForm((prev) => ({ ...prev, inquiryType: option.value }))}
+              className={cn(
+                "rounded-full px-4 py-2.5 text-sm font-medium transition-all sm:w-auto",
+                form.inquiryType === option.value
+                  ? "bg-primary text-primary-foreground shadow-md shadow-primary/15"
+                  : "bg-card border border-border/70 text-muted-foreground hover:border-primary/30 hover:text-foreground",
+              )}
+            >
+              {option.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="message" className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+        <Label htmlFor="message" className="text-sm font-semibold text-foreground/80">
           Message
         </Label>
         <Textarea
@@ -103,24 +113,30 @@ export function ContactForm() {
           name="message"
           required
           rows={5}
+          placeholder="Tell us about your goals…"
           value={form.message}
           onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
-          className="rounded-sm border-border bg-background min-h-[120px]"
+          className="min-h-[140px] rounded-xl border-border/70 bg-card px-4 py-3 text-base shadow-sm transition-all placeholder:text-muted-foreground focus-visible:border-primary/40 focus-visible:ring-4 focus-visible:ring-primary/10"
         />
       </div>
 
       <Button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full rounded-sm font-mono text-[11px] uppercase tracking-widest"
+        size="lg"
+        className="mt-2 w-full h-12 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg shadow-primary/20 hover:scale-[1.01] active:scale-[0.99] transition-transform"
       >
         {status === "submitting" ? "Sending…" : "Send message"}
       </Button>
 
       {status === "success" && (
-        <p className="text-sm text-primary font-mono">Message sent. We typically respond within 1–2 business days.</p>
+        <p className="rounded-xl bg-primary/8 px-4 py-3 text-sm font-medium text-primary">
+          Message sent. We typically respond within 1–2 business days.
+        </p>
       )}
-      {status === "error" && <p className="text-sm text-destructive">{errorMessage}</p>}
+      {status === "error" && (
+        <p className="rounded-xl bg-destructive/8 px-4 py-3 text-sm text-destructive">{errorMessage}</p>
+      )}
     </form>
   );
 }
