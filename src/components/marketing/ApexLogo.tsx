@@ -6,11 +6,14 @@ type ApexLogoProps = {
   size?: "sm" | "md" | "lg" | "hero";
 };
 
+const BRAND_CREAM = "#EEEBE0";
+const BRAND_TEAL = "#193842";
+
 const sizeMap = {
   sm: "w-10 h-10",
   md: "w-16 h-16",
   lg: "w-28 h-28",
-  hero: "w-full max-w-md aspect-square",
+  hero: "w-full max-w-[min(100%,22rem)] sm:max-w-md aspect-square",
 };
 
 const FRAME_PATH =
@@ -21,6 +24,16 @@ const INTERIOR_PATHS = [
   "M713.95,887.3c-25.82-15.41-46.5-31.29-78.65-34.52-23.87-4.08-56.91,7.96-77.42,21.24l-35.7,23.13-35.86,23.41c-6.66,4.35-12.99,10.57-21.5,11.47l-18.58-2.18c-1.52-2.67-4.78-3.74-6.66-5.41-4.51-4-5.35-10.98-5.27-16.74,21.47-21.78,41.22-43.54,60.47-66.99l86.91-105.86c6.82-8.31,14.13-14.79,23.92-19.18,24.49-11,46.78.3,63.2,20.68l71.26,88.45,15.26,18.82c1.76,2.17,2.97,3.32,4.76,5.31l29.32,32.59,17.99,19.31c-3.58,10.8-12,16.81-22.04,20.76-2.33.92-3.74,3.89-7.65,2.4l-9-.31-43.63-29.72-11.16-6.66Z",
   "M276.73,700.47c-7.58,2.73-15.32-5.14-21.73,2.76l-8.36,2.02c-2.99.72-3.73,1.7-6.51,4.54-10.75-41.78-13.08-84.89-8.08-127.43,10.8-91.76,54.66-174.79,123.65-235.79,22.84-20.2,47.23-38.15,74.41-52.32,2.29-1.19,3.4-1.83,5.92-1.06,2.03.62,2.14,2.55,3.52,4.35,3.61,4.7,7.77,9.35,9.74,15.65-35.07,19.33-65.84,43.83-93.05,73.18-44.47,47.98-72.79,108.57-84.89,172.7-3.3,17.46-4.32,33.73-4.92,51.41-1.03,30.26,2.73,59.79,10.29,89.99Z",
   "M985.85,700.65l-11.9,1.54c20.64-80,13.19-154.91-20.73-229.35-17.76-38.98-42.64-73.09-73.22-102.71-11.72-11.35-22.88-21.66-36.31-30.86l-30.71-21.03c2.73-3.83,5.57-6.22,8.09-9.41l8.23-10.46c72.75,41.65,132.73,106.81,164.64,184.67,18.14,44.27,27.67,90.87,27.76,138.48.04,22.25-2.18,43.24-5.91,64.92-1.25,7.29-1.82,14.42-5.38,21.14-4.12-.93-7.48-1.74-11.46-.03-2.14-6.68-7.26-7.65-13.1-6.9Z",
+];
+
+const RAIN_DROPS = [
+  { x: 420, delay: "0s" },
+  { x: 520, delay: "0.35s" },
+  { x: 620, delay: "0.7s" },
+  { x: 720, delay: "0.2s" },
+  { x: 820, delay: "0.55s" },
+  { x: 480, delay: "0.9s" },
+  { x: 680, delay: "1.1s" },
 ];
 
 export function ApexLogo({ className = "", animated = false, size = "md" }: ApexLogoProps) {
@@ -54,40 +67,51 @@ export function ApexLogo({ className = "", animated = false, size = "md" }: Apex
             ))}
           </clipPath>
           <linearGradient id={`${uid}-water`} x1="0" y1="1" x2="0" y2="0">
-            <stop offset="0%" stopColor="#c2410c" />
-            <stop offset="55%" stopColor="#ea580c" />
-            <stop offset="100%" stopColor="#fdba74" stopOpacity="0.85" />
+            <stop offset="0%" stopColor="#0f2a32" />
+            <stop offset="45%" stopColor={BRAND_TEAL} />
+            <stop offset="100%" stopColor="#2a5560" stopOpacity="0.9" />
           </linearGradient>
           <linearGradient id={`${uid}-surface`} x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
-            <stop offset="50%" stopColor="#ffffff" stopOpacity="0.35" />
+            <stop offset="50%" stopColor="#ffffff" stopOpacity="0.28" />
             <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
           </linearGradient>
         </defs>
 
-        {/* Black frame */}
         <path d={FRAME_PATH} fill="#151515" />
 
-        {/* Rising liquid inside logo interior */}
         {animated ? (
           <g clipPath={`url(#${uid}-interior)`}>
-            <rect x="0" y="0" width="1254" height="1254" fill="#fafafa" />
-            <g className="animate-water-rise">
+            <rect x="0" y="0" width="1254" height="1254" fill={BRAND_CREAM} />
+            {RAIN_DROPS.map((drop, i) => (
+              <line
+                key={i}
+                x1={drop.x}
+                y1={0}
+                x2={drop.x}
+                y2={36}
+                stroke={BRAND_TEAL}
+                strokeWidth={8}
+                strokeLinecap="round"
+                opacity={0.55}
+                className="animate-logo-rain"
+                style={{ animationDelay: drop.delay }}
+              />
+            ))}
+            <g className="animate-water-fill-drain">
               <rect x="-20" y="0" width="1294" height="1294" fill={`url(#${uid}-water)`} />
               <ellipse
                 cx="627"
                 cy="0"
                 rx="680"
-                ry="48"
+                ry="44"
                 fill={`url(#${uid}-surface)`}
-                className="animate-water-surface"
+                className="animate-water-surface-wave"
               />
             </g>
           </g>
         ) : (
-          INTERIOR_PATHS.map((d, i) => (
-            <path key={i} d={d} fill="#fafafa" />
-          ))
+          INTERIOR_PATHS.map((d, i) => <path key={i} d={d} fill={BRAND_CREAM} />)
         )}
       </svg>
     </div>

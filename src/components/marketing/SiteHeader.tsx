@@ -15,7 +15,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 glass border-b border-border/60">
-      <nav className="container mx-auto flex items-center justify-between px-6 py-4">
+      <nav className="container mx-auto relative flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
         <Link to="/" className="flex items-center gap-3 group">
           <ApexLogo size="sm" />
           <span className="font-bold tracking-tight text-lg uppercase hidden sm:block group-hover:text-primary transition-colors">
@@ -52,17 +52,24 @@ export function SiteHeader() {
         </div>
 
         {menuOpen && (
-          <div className="absolute top-full left-0 right-0 lg:hidden glass border-b border-border px-6 py-5 flex flex-col gap-4">
+          <div className="absolute top-full left-0 right-0 lg:hidden glass border-b border-border px-4 sm:px-6 py-5 flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-base font-medium uppercase tracking-wide text-muted-foreground hover:text-primary"
+                className="text-base font-medium uppercase tracking-wide text-muted-foreground hover:text-primary py-1 min-h-[44px] flex items-center"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
               </a>
             ))}
+            <a
+              href="/#contact"
+              className="inline-flex justify-center items-center min-h-[48px] px-5 py-3 bg-primary text-primary-foreground text-sm font-semibold uppercase tracking-wide rounded-full"
+              onClick={() => setMenuOpen(false)}
+            >
+              Inquiry
+            </a>
           </div>
         )}
       </nav>

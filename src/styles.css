@@ -3,34 +3,34 @@
 @import "tw-animate-css";
 
 @theme {
-  --color-background: #fafafa;
-  --color-foreground: #171717;
-  --color-muted: #737373;
-  --color-primary: #ea580c;
-  --color-primary-foreground: #ffffff;
-  --color-border: #e5e5e5;
-  --color-card: #ffffff;
-  --color-card-foreground: #171717;
-  --color-popover: #ffffff;
-  --color-popover-foreground: #171717;
-  --color-secondary: #f5f5f5;
-  --color-secondary-foreground: #171717;
-  --color-muted-foreground: #525252;
-  --color-accent: #171717;
-  --color-accent-foreground: #fafafa;
+  --color-background: #EEEBE0;
+  --color-foreground: #151515;
+  --color-muted: #6b6b63;
+  --color-primary: #193842;
+  --color-primary-foreground: #EEEBE0;
+  --color-border: #d8d4c8;
+  --color-card: #f7f5ef;
+  --color-card-foreground: #151515;
+  --color-popover: #f7f5ef;
+  --color-popover-foreground: #151515;
+  --color-secondary: #e4e0d4;
+  --color-secondary-foreground: #151515;
+  --color-muted-foreground: #4a4a44;
+  --color-accent: #193842;
+  --color-accent-foreground: #EEEBE0;
   --color-destructive: hsl(0 70% 50%);
   --color-destructive-foreground: #ffffff;
-  --color-input: #e5e5e5;
-  --color-ring: #ea580c;
-  --color-ring-offset-background: #fafafa;
-  --color-sidebar: #ffffff;
+  --color-input: #d8d4c8;
+  --color-ring: #193842;
+  --color-ring-offset-background: #EEEBE0;
+  --color-sidebar: #f7f5ef;
   --color-sidebar-foreground: #151515;
-  --color-sidebar-primary: #ea580c;
-  --color-sidebar-primary-foreground: #ffffff;
-  --color-sidebar-accent: #f5f5f5;
-  --color-sidebar-accent-foreground: #171717;
-  --color-sidebar-border: #e5e5e5;
-  --color-sidebar-ring: #ea580c;
+  --color-sidebar-primary: #193842;
+  --color-sidebar-primary-foreground: #EEEBE0;
+  --color-sidebar-accent: #e4e0d4;
+  --color-sidebar-accent-foreground: #151515;
+  --color-sidebar-border: #d8d4c8;
+  --color-sidebar-ring: #193842;
   --font-display: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   --radius: 0.75rem;
@@ -44,6 +44,43 @@
 @keyframes reveal-up {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes logo-rain {
+  0% { transform: translateY(-120px); opacity: 0; }
+  8% { opacity: 0.7; }
+  22% { transform: translateY(520px); opacity: 0; }
+  100% { transform: translateY(520px); opacity: 0; }
+}
+
+@keyframes water-fill-drain {
+  0% { transform: translateY(100%); }
+  18% { transform: translateY(100%); }
+  48% { transform: translateY(-2%); }
+  58% { transform: translateY(-2%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes water-surface-wave {
+  0%, 100% { transform: translateY(-2%) translateX(0); }
+  50% { transform: translateY(-2%) translateX(16px); }
+}
+
+.animate-logo-rain {
+  animation: logo-rain 7s linear infinite;
+  transform-box: fill-box;
+}
+
+.animate-water-fill-drain {
+  transform: translateY(100%);
+  animation: water-fill-drain 7s cubic-bezier(0.45, 0.05, 0.25, 1) infinite;
+  transform-origin: center bottom;
+  transform-box: fill-box;
+}
+
+.animate-water-surface-wave {
+  animation: water-surface-wave 7s ease-in-out infinite;
+  transform-box: fill-box;
 }
 
 @keyframes water-rise {
@@ -103,7 +140,7 @@
 .text-gradient {
   display: inline-block;
   padding-right: 0.12em;
-  background: linear-gradient(135deg, #171717 0%, #ea580c 45%, #ea580c 55%, #171717 100%);
+  background: linear-gradient(135deg, #151515 0%, #193842 45%, #193842 55%, #151515 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -112,17 +149,17 @@
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(247, 245, 239, 0.88);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(25, 56, 66, 0.08);
 }
 
 .mesh-bg {
-  background-color: #fafafa;
+  background-color: #EEEBE0;
   background-image:
-    radial-gradient(at 15% 15%, rgba(234, 88, 12, 0.04) 0, transparent 45%),
-    radial-gradient(at 85% 20%, rgba(0, 0, 0, 0.03) 0, transparent 40%),
-    radial-gradient(at 50% 90%, rgba(234, 88, 12, 0.03) 0, transparent 45%);
+    radial-gradient(at 15% 15%, rgba(25, 56, 66, 0.06) 0, transparent 45%),
+    radial-gradient(at 85% 20%, rgba(25, 56, 66, 0.04) 0, transparent 40%),
+    radial-gradient(at 50% 90%, rgba(25, 56, 66, 0.05) 0, transparent 45%);
 }
 
 @layer base {
@@ -136,8 +173,13 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-display);
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
+  }
+  @media (min-width: 640px) {
+    html, body {
+      font-size: 18px;
+    }
   }
   ::selection {
     background-color: var(--color-primary);

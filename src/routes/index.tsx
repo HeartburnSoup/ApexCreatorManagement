@@ -21,8 +21,8 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Building influential brands. Creating meaningful partnerships.",
       },
-      { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
-      { name: "twitter:image", content: `${SITE_URL}/og-image.jpg` },
+      { property: "og:image", content: `${SITE_URL}/og-image.png` },
+      { name: "twitter:image", content: `${SITE_URL}/og-image.png` },
     ],
   }),
   component: Index,
@@ -62,39 +62,39 @@ function Index() {
 
       <main>
         {/* Hero */}
-        <section className="relative min-h-[92vh] flex items-center py-20 overflow-hidden">
-          <div className="absolute top-20 right-[10%] w-72 h-72 rounded-full bg-primary/8 blur-3xl animate-orb" aria-hidden />
-          <div className="absolute bottom-10 left-[5%] w-96 h-96 rounded-full bg-neutral-200/40 blur-3xl animate-orb" style={{ animationDelay: "2s" }} aria-hidden />
+        <section className="relative min-h-0 sm:min-h-[92vh] flex items-center py-12 sm:py-20 overflow-hidden">
+          <div className="absolute top-16 right-[5%] w-48 sm:w-72 h-48 sm:h-72 rounded-full bg-primary/8 blur-3xl animate-orb" aria-hidden />
+          <div className="absolute bottom-10 left-[5%] w-64 sm:w-96 h-64 sm:h-96 rounded-full bg-primary/5 blur-3xl animate-orb" style={{ animationDelay: "2s" }} aria-hidden />
 
-          <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
-            <div className="animate-reveal">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] mb-6 pr-1">
+          <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center relative z-10">
+            <div className="animate-reveal order-2 lg:order-1">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] mb-4 sm:mb-6 pr-1">
                 Building Influential{" "}
                 <span className="text-gradient italic pr-2">Brands</span>
                 <span className="text-foreground">.</span>
               </h1>
-              <p className="text-2xl sm:text-3xl font-semibold text-muted-foreground mb-6 text-balance">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-muted-foreground mb-4 sm:mb-6 text-balance">
                 Creating Meaningful Partnerships.
               </p>
-              <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mb-4 text-pretty leading-relaxed">
-                Apex represents creators, influencers, athletes, and digital entrepreneurs — transforming online presence into sustainable businesses.
+              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-xl mb-3 sm:mb-4 text-pretty leading-relaxed">
+                Apex represents creators, influencers, athletes, and digital entrepreneurs, transforming online presence into sustainable businesses.
               </p>
-              <p className="text-base text-muted-foreground/90 max-w-xl mb-10 italic text-pretty">
+              <p className="text-sm sm:text-base text-muted-foreground/90 max-w-xl mb-8 sm:mb-10 italic text-pretty">
                 Our mission is simple: empower creators to focus on creating while we handle the business behind the brand.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a
                   href="#contact"
-                  className="inline-flex px-8 py-4 bg-primary text-primary-foreground text-base font-bold uppercase tracking-wide rounded-full hover:scale-105 transition-transform shadow-lg shadow-primary/25"
+                  className="inline-flex justify-center px-8 py-4 min-h-[48px] bg-primary text-primary-foreground text-sm sm:text-base font-bold uppercase tracking-wide rounded-full hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-lg shadow-primary/20"
                 >
                   Get in touch
                 </a>
               </div>
             </div>
 
-            <div className="flex justify-center animate-reveal [animation-delay:200ms]">
-              <div className="relative">
-                <div className="absolute -inset-8 rounded-3xl bg-gradient-to-br from-primary/10 via-transparent to-neutral-200/30 animate-gradient" aria-hidden />
+            <div className="flex justify-center animate-reveal [animation-delay:200ms] order-1 lg:order-2">
+              <div className="relative w-full max-w-[min(100%,18rem)] sm:max-w-md mx-auto">
+                <div className="absolute -inset-4 sm:-inset-8 rounded-3xl bg-gradient-to-br from-primary/10 via-transparent to-primary/5 animate-gradient" aria-hidden />
                 <ApexLogo size="hero" animated className="mx-auto" />
               </div>
             </div>
@@ -103,7 +103,7 @@ function Index() {
 
         {/* Stats strip */}
         <section className="border-y border-border bg-card/80 backdrop-blur-sm">
-          <div className="container mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             {stats.map((s) => (
               <div key={s.label} className="text-center sm:text-left">
                 <p className="text-4xl font-black text-primary">{s.value}</p>
@@ -114,17 +114,17 @@ function Index() {
         </section>
 
         {/* Services */}
-        <section id="services" className="py-24 lg:py-32">
-          <div className="container mx-auto px-6">
-            <div className="max-w-2xl mb-16">
+        <section id="services" className="py-16 sm:py-24 lg:py-32">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="max-w-2xl mb-10 sm:mb-16">
               <p className="text-sm font-bold uppercase tracking-widest text-primary mb-3">What we do</p>
-              <h2 className="text-4xl sm:text-5xl font-extrabold uppercase tracking-tight">Full-service creator management</h2>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-balance">Full-service creator management</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((s, i) => (
                 <article
                   key={s.n}
-                  className="group glass rounded-2xl p-8 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300 animate-reveal"
+                  className="group glass rounded-2xl p-6 sm:p-8 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300 animate-reveal"
                   style={{ animationDelay: `${i * 80}ms` }}
                 >
                   <span className="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-primary/10 text-primary font-bold text-lg mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
@@ -139,10 +139,10 @@ function Index() {
         </section>
 
         {/* Niches */}
-        <section id="niches" className="py-24 lg:py-32 bg-accent text-accent-foreground relative overflow-hidden">
+        <section id="niches" className="py-16 sm:py-24 lg:py-32 bg-accent text-accent-foreground relative overflow-hidden">
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "32px 32px" }} aria-hidden />
-          <div className="container mx-auto px-6 relative z-10">
-            <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tight mb-4 max-w-3xl">
+          <div className="container mx-auto px-4 sm:px-6 relative z-10">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight mb-4 max-w-3xl text-balance">
               Looking for Representation?
             </h2>
             <p className="text-lg sm:text-xl text-accent-foreground/80 max-w-2xl mb-10 text-pretty leading-relaxed">
@@ -162,11 +162,11 @@ function Index() {
         </section>
 
         {/* Why Apex */}
-        <section className="py-24 lg:py-32">
-          <div className="container mx-auto px-6">
-            <div className="text-center max-w-2xl mx-auto mb-16">
+        <section className="py-16 sm:py-24 lg:py-32">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
               <p className="text-sm font-bold uppercase tracking-widest text-primary mb-3">Why Apex</p>
-              <h2 className="text-4xl sm:text-5xl font-extrabold uppercase tracking-tight">Built for creators who want more</h2>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-balance">Built for creators who want more</h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {whyUs.map((w, i) => (
@@ -181,11 +181,11 @@ function Index() {
         </section>
 
         {/* Brands */}
-        <section id="brands" className="py-24 lg:py-32 bg-card border-y border-border">
-          <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+        <section id="brands" className="py-16 sm:py-24 lg:py-32 bg-card border-y border-border">
+          <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">For Brands</p>
-              <h2 className="text-4xl sm:text-5xl font-extrabold uppercase tracking-tight leading-tight mb-8">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight leading-tight mb-6 sm:mb-8 text-balance">
                 Partner with creators who <span className="text-primary italic">move</span> audiences.
               </h2>
               <p className="text-lg text-muted-foreground mb-8 text-pretty leading-relaxed">
@@ -193,7 +193,7 @@ function Index() {
               </p>
               <a
                 href="#contact"
-                className="inline-flex px-8 py-4 bg-accent text-accent-foreground text-base font-bold uppercase tracking-wide rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
+                className="inline-flex justify-center w-full sm:w-auto px-8 py-4 min-h-[48px] bg-accent text-accent-foreground text-sm sm:text-base font-bold uppercase tracking-wide rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 Start a partnership →
               </a>
@@ -217,15 +217,15 @@ function Index() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="py-24 lg:py-32">
-          <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
+        <section id="contact" className="py-16 sm:py-24 lg:py-32">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start max-w-6xl mx-auto">
               <div>
-                <h2 className="text-4xl sm:text-6xl font-extrabold uppercase tracking-tight mb-6 leading-tight">
+                <h2 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold uppercase tracking-tight mb-4 sm:mb-6 leading-tight text-balance">
                   Ready to elevate your brand?
                 </h2>
-                <p className="text-lg text-muted-foreground mb-8 text-pretty leading-relaxed">
-                  For creator representation, partnership opportunities, or brand collaborations — send us a message. We typically respond within 1–2 business days.
+                <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 text-pretty leading-relaxed">
+                  For creator representation, partnership opportunities, or brand collaborations, send us a message. We typically respond within 1–2 business days.
                 </p>
                 <p className="text-base font-mono">
                   <span className="text-primary font-bold">E.</span>{" "}
@@ -234,7 +234,7 @@ function Index() {
                   </a>
                 </p>
               </div>
-              <div className="glass rounded-2xl p-8 shadow-xl">
+              <div className="glass rounded-2xl p-5 sm:p-8 shadow-xl">
                 <ContactForm />
               </div>
             </div>

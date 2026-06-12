@@ -3,7 +3,7 @@ import { ApexLogo } from "./ApexLogo";
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-card/50 py-12">
-      <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+      <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
         <div className="flex items-center gap-4">
           <ApexLogo size="sm" />
           <div>
@@ -17,7 +17,7 @@ export function SiteFooter() {
           </a>
         </div>
       </div>
-      <div className="container mx-auto px-6 mt-8 pt-8 border-t border-border text-sm text-muted-foreground">
+      <div className="container mx-auto px-4 sm:px-6 mt-8 pt-8 border-t border-border text-sm text-muted-foreground">
         © {new Date().getFullYear()} Apex Creator Management. All rights reserved.
       </div>
     </footer>

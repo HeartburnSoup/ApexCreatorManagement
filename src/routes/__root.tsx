@@ -91,9 +91,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },
       { property: "og:site_name", content: "Apex Creator Management" },
-      { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
+      { property: "og:image", content: `${SITE_URL}/og-image.png` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: `${SITE_URL}/og-image.jpg` },
+      { name: "twitter:image", content: `${SITE_URL}/og-image.png` },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
