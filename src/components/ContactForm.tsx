@@ -43,7 +43,7 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="space-y-2">
-        <Label htmlFor="name" className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+        <Label htmlFor="name" className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
           Name
         </Label>
         <Input
@@ -57,7 +57,7 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="email" className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+        <Label htmlFor="email" className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
           Email
         </Label>
         <Input
@@ -72,7 +72,7 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="inquiryType" className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+        <Label htmlFor="inquiryType" className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
           Inquiry type
         </Label>
         <select
@@ -95,7 +95,7 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="message" className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+        <Label htmlFor="message" className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
           Message
         </Label>
         <Textarea

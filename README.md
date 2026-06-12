@@ -26,22 +26,21 @@ npm run preview
 
 ## Assets
 
-Replace placeholder images in `public/` when you have final brand photography:
+| File | Purpose |
+|------|---------|
+| `public/1.svg` | Logo, favicon, animated hero mark |
+| `public/og-image.jpg` | Social share preview (1200×630) |
+| `public/apple-touch-icon.png` | iOS home screen icon |
 
-| File | Recommended size | Purpose |
-|------|------------------|---------|
-| `hero-portrait.jpg` | 800×1216 (4:5) | Hero section portrait |
-| `og-image.jpg` | 1200×630 | Social share preview |
-| `apple-touch-icon.png` | 180×180 | iOS home screen icon |
-| `favicon.svg` | — | Browser tab icon |
+## Reverting the design
 
-Regenerate neutral placeholders (optional):
+The visual redesign lives on branch `feature/redesign-and-blog`. To go back to the previous dark theme:
 
 ```bash
-npm install jimp --save-dev
-node scripts/generate-placeholders.mjs
-npm uninstall jimp
+git checkout main
 ```
+
+Or merge the redesign into `main` when you're happy with it.
 
 ## Deploy to Vercel
 

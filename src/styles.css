@@ -3,59 +3,116 @@
 @import "tw-animate-css";
 
 @theme {
-  --color-background: hsl(222 47% 4%);
-  --color-foreground: hsl(210 20% 98%);
-  --color-muted: hsl(215 20% 65% / 0.6);
-  --color-primary: hsl(230 100% 67%);
-  --color-primary-foreground: hsl(210 20% 98%);
-  --color-border: hsl(217 33% 17%);
-  --color-card: hsl(222 47% 6%);
-  --color-card-foreground: hsl(210 20% 98%);
-  --color-popover: hsl(222 47% 6%);
-  --color-popover-foreground: hsl(210 20% 98%);
-  --color-secondary: hsl(217 33% 12%);
-  --color-secondary-foreground: hsl(210 20% 98%);
-  --color-muted-foreground: hsl(215 20% 65%);
-  --color-accent: hsl(230 100% 67%);
-  --color-accent-foreground: hsl(210 20% 98%);
-  --color-destructive: hsl(0 70% 55%);
-  --color-destructive-foreground: hsl(210 20% 98%);
-  --color-input: hsl(217 33% 17%);
-  --color-ring: hsl(230 100% 67%);
-  --color-ring-offset-background: hsl(222 47% 4%);
-  --color-sidebar: hsl(222 47% 6%);
-  --color-sidebar-foreground: hsl(210 20% 98%);
-  --color-sidebar-primary: hsl(230 100% 67%);
-  --color-sidebar-primary-foreground: hsl(210 20% 98%);
-  --color-sidebar-accent: hsl(217 33% 12%);
-  --color-sidebar-accent-foreground: hsl(210 20% 98%);
-  --color-sidebar-border: hsl(217 33% 17%);
-  --color-sidebar-ring: hsl(230 100% 67%);
+  --color-background: #f5f3f1;
+  --color-foreground: #151515;
+  --color-muted: #6b6560;
+  --color-primary: #e85d04;
+  --color-primary-foreground: #ffffff;
+  --color-border: #ddd8d3;
+  --color-card: #ffffff;
+  --color-card-foreground: #151515;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #151515;
+  --color-secondary: #ebe7e2;
+  --color-secondary-foreground: #151515;
+  --color-muted-foreground: #5c5651;
+  --color-accent: #151515;
+  --color-accent-foreground: #f5f3f1;
+  --color-destructive: hsl(0 70% 50%);
+  --color-destructive-foreground: #ffffff;
+  --color-input: #ddd8d3;
+  --color-ring: #e85d04;
+  --color-ring-offset-background: #f5f3f1;
+  --color-sidebar: #ffffff;
+  --color-sidebar-foreground: #151515;
+  --color-sidebar-primary: #e85d04;
+  --color-sidebar-primary-foreground: #ffffff;
+  --color-sidebar-accent: #ebe7e2;
+  --color-sidebar-accent-foreground: #151515;
+  --color-sidebar-border: #ddd8d3;
+  --color-sidebar-ring: #e85d04;
   --font-display: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-  --radius: 0.125rem;
-  --radius-sm: calc(var(--radius) - 0px);
+  --radius: 0.75rem;
+  --radius-sm: calc(var(--radius) - 4px);
   --radius-md: var(--radius);
-  --radius-lg: calc(var(--radius) + 2px);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-lg: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 8px);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes reveal-up {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.animate-reveal { animation: reveal-up 0.8s var(--ease-out-expo) both; }
+@keyframes logo-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-14px) scale(1.02); }
+}
+
+@keyframes logo-spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.92); opacity: 0.35; }
+  50% { transform: scale(1.08); opacity: 0.6; }
+  100% { transform: scale(0.92); opacity: 0.35; }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float-orb {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(12px, -18px); }
+  66% { transform: translate(-8px, 10px); }
+}
+
+.animate-reveal { animation: reveal-up 0.9s var(--ease-out-expo) both; }
+.animate-logo-float { animation: logo-float 5s ease-in-out infinite; }
+.animate-logo-ring { animation: pulse-ring 4s ease-in-out infinite; }
+.animate-gradient { animation: gradient-shift 12s ease infinite; background-size: 200% 200%; }
+.animate-orb { animation: float-orb 8s ease-in-out infinite; }
+
+.text-gradient {
+  background: linear-gradient(135deg, #151515 0%, #e85d04 50%, #151515 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(21, 21, 21, 0.08);
+}
+
+.mesh-bg {
+  background-color: #f5f3f1;
+  background-image:
+    radial-gradient(at 20% 20%, rgba(232, 93, 4, 0.12) 0, transparent 50%),
+    radial-gradient(at 80% 10%, rgba(21, 21, 21, 0.06) 0, transparent 45%),
+    radial-gradient(at 60% 80%, rgba(232, 93, 4, 0.08) 0, transparent 50%);
+}
 
 @layer base {
   * {
     border-color: var(--color-border);
   }
+  html {
+    scroll-behavior: smooth;
+  }
   html, body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-display);
+    font-size: 18px;
+    line-height: 1.6;
   }
   ::selection {
     background-color: var(--color-primary);
