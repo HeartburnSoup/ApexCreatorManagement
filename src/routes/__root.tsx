@@ -19,7 +19,6 @@ const organizationSchema = {
   name: "Apex Creator Management",
   url: SITE_URL,
   email: "talent@apexcreatormanagement.com",
-  sameAs: ["https://instagram.com/apexcreatormanagement"],
 };
 
 function NotFoundComponent() {

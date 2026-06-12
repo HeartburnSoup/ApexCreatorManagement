@@ -15,14 +15,6 @@ export function SiteFooter() {
           <a href="/#contact" className="hover:text-primary transition-colors">
             Contact
           </a>
-          <a
-            href="https://instagram.com/apexcreatormanagement"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-primary transition-colors"
-          >
-            Instagram
-          </a>
         </div>
       </div>
       <div className="container mx-auto px-6 mt-8 pt-8 border-t border-border text-sm text-muted-foreground">

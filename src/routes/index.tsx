@@ -63,18 +63,15 @@ function Index() {
       <main>
         {/* Hero */}
         <section className="relative min-h-[92vh] flex items-center py-20 overflow-hidden">
-          <div className="absolute top-20 right-[10%] w-72 h-72 rounded-full bg-primary/15 blur-3xl animate-orb" aria-hidden />
-          <div className="absolute bottom-10 left-[5%] w-96 h-96 rounded-full bg-accent/5 blur-3xl animate-orb" style={{ animationDelay: "2s" }} aria-hidden />
+          <div className="absolute top-20 right-[10%] w-72 h-72 rounded-full bg-primary/8 blur-3xl animate-orb" aria-hidden />
+          <div className="absolute bottom-10 left-[5%] w-96 h-96 rounded-full bg-neutral-200/40 blur-3xl animate-orb" style={{ animationDelay: "2s" }} aria-hidden />
 
           <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
             <div className="animate-reveal">
-              <p className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-card border border-border text-sm font-semibold uppercase tracking-widest text-primary shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                Boutique Creator Management
-              </p>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-balance mb-6">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] mb-6 pr-1">
                 Building Influential{" "}
-                <span className="text-gradient italic">Brands</span>.
+                <span className="text-gradient italic pr-2">Brands</span>
+                <span className="text-foreground">.</span>
               </h1>
               <p className="text-2xl sm:text-3xl font-semibold text-muted-foreground mb-6 text-balance">
                 Creating Meaningful Partnerships.
@@ -97,7 +94,7 @@ function Index() {
 
             <div className="flex justify-center animate-reveal [animation-delay:200ms]">
               <div className="relative">
-                <div className="absolute -inset-8 rounded-3xl bg-gradient-to-br from-primary/20 via-transparent to-accent/10 animate-gradient" aria-hidden />
+                <div className="absolute -inset-8 rounded-3xl bg-gradient-to-br from-primary/10 via-transparent to-neutral-200/30 animate-gradient" aria-hidden />
                 <ApexLogo size="hero" animated className="mx-auto" />
               </div>
             </div>
@@ -230,21 +227,12 @@ function Index() {
                 <p className="text-lg text-muted-foreground mb-8 text-pretty leading-relaxed">
                   For creator representation, partnership opportunities, or brand collaborations — send us a message. We typically respond within 1–2 business days.
                 </p>
-                <p className="text-base font-mono mb-10">
+                <p className="text-base font-mono">
                   <span className="text-primary font-bold">E.</span>{" "}
                   <a href="mailto:talent@apexcreatormanagement.com" className="hover:text-primary transition-colors break-all">
                     talent@apexcreatormanagement.com
                   </a>
                 </p>
-                <a
-                  href="https://instagram.com/apexcreatormanagement"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-xl font-bold uppercase tracking-tight group"
-                >
-                  @apexcreatormanagement
-                  <span className="ml-3 text-primary group-hover:translate-x-2 transition-transform">→</span>
-                </a>
               </div>
               <div className="glass rounded-2xl p-8 shadow-xl">
                 <ContactForm />
