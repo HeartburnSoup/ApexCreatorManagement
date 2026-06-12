@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
 const SITE_URL = "https://apexcreatormanagement.com";
-const HERO_IMAGE = "/hero-portrait.jpg";
+const HERO_IMAGE = "/influencer-management-agency-skyscraper-perspective.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -199,7 +199,7 @@ function Index() {
               <div className="w-full aspect-[4/5] overflow-hidden rounded-sm ring-1 ring-white/10">
                 <img
                   src={HERO_IMAGE}
-                  alt="Editorial portrait representing Apex Creator Management's talent roster"
+                  alt="Skyscraper perspective representing Apex Creator Management's influencer agency"
                   className="w-full h-full object-cover"
                   width={800}
                   height={1216}
