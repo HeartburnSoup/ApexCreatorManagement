@@ -1,39 +1,35 @@
 const highlights = [
-  { value: "360°", label: "Creator-first strategy", detail: "End-to-end representation built around your voice and goals." },
+  { value: "360°", label: "Creator-first strategy", detail: "End-to-end representation built around your voice." },
   { value: "24/7", label: "Partnership support", detail: "Responsive guidance from brief to signed deal." },
-  { value: "Global", label: "Brand reach", detail: "Connections with partners that scale beyond one campaign." },
+  { value: "Global", label: "Brand reach", detail: "Partners that scale beyond one campaign." },
 ];
 
 export function HeroHighlights() {
   return (
-    <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto animate-reveal [animation-delay:200ms]">
+    <div className="relative w-full animate-reveal [animation-delay:250ms]">
       <div
-        className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-brand-fire/20 via-brand-fire/5 to-primary/10 blur-sm"
+        className="absolute -top-8 -right-8 w-40 h-40 rounded-full bg-brand-fire/20 blur-3xl animate-glow-pulse pointer-events-none"
         aria-hidden
       />
-      <div className="relative glass rounded-3xl border border-border/80 p-6 sm:p-8 shadow-xl shadow-primary/5 space-y-5">
-        <div>
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-brand-fire mb-2">Why creators choose Apex</p>
-          <p className="text-lg font-semibold text-foreground leading-snug text-balance">
-            Boutique management for creators ready to build something lasting.
-          </p>
-        </div>
-        <div className="space-y-4">
-          {highlights.map((item) => (
-            <div
-              key={item.label}
-              className="flex gap-4 items-start rounded-2xl bg-card/80 border border-border/60 px-4 py-3.5 hover:border-brand-fire/30 transition-colors"
-            >
-              <span className="text-2xl sm:text-3xl font-black text-brand-fire leading-none shrink-0 w-16">
+      <div className="relative grid gap-3 sm:gap-4">
+        {highlights.map((item, i) => (
+          <div
+            key={item.label}
+            className="group relative flex items-stretch overflow-hidden rounded-2xl bento-card glow-border"
+            style={{ animationDelay: `${300 + i * 100}ms` }}
+          >
+            <div className="w-1.5 shrink-0 fire-line" aria-hidden />
+            <div className="flex flex-1 items-center gap-5 px-5 py-5 sm:px-6 sm:py-6">
+              <span className="text-3xl sm:text-4xl font-black text-brand-fire leading-none shrink-0 tabular-nums">
                 {item.value}
               </span>
-              <div>
-                <p className="font-bold text-sm sm:text-base text-foreground">{item.label}</p>
-                <p className="text-sm text-muted-foreground mt-0.5 leading-relaxed">{item.detail}</p>
+              <div className="min-w-0">
+                <p className="font-bold text-sm sm:text-base text-bone">{item.label}</p>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-0.5 leading-relaxed">{item.detail}</p>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );

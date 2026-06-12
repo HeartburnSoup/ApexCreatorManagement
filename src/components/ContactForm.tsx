@@ -28,7 +28,7 @@ const inquiryOptions = [
 ];
 
 const fieldClass =
-  "h-12 rounded-xl border-border/70 bg-card px-4 text-base shadow-sm transition-all placeholder:text-muted-foreground focus-visible:border-primary/40 focus-visible:ring-4 focus-visible:ring-primary/10";
+  "h-12 rounded-xl border-border/60 bg-smoke/50 px-4 text-base text-bone shadow-none transition-all placeholder:text-muted-foreground focus-visible:border-brand-fire/50 focus-visible:ring-4 focus-visible:ring-brand-fire/10";
 
 export function ContactForm() {
   const [form, setForm] = useState<FormState>(initialState);
@@ -94,8 +94,8 @@ export function ContactForm() {
               className={cn(
                 "rounded-full px-4 py-2.5 text-sm font-medium transition-all sm:w-auto",
                 form.inquiryType === option.value
-                  ? "bg-brand-fire text-bone shadow-md shadow-brand-fire/25"
-                  : "bg-card border border-border/70 text-muted-foreground hover:border-brand-fire/40 hover:text-foreground",
+                  ? "bg-brand-fire text-bone shadow-md shadow-brand-fire/30"
+                  : "bg-smoke/50 border border-border/60 text-muted-foreground hover:border-brand-fire/40 hover:text-bone",
               )}
             >
               {option.label}
@@ -116,7 +116,7 @@ export function ContactForm() {
           placeholder="Tell us about your goals…"
           value={form.message}
           onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
-          className="min-h-[140px] rounded-xl border-border/70 bg-card px-4 py-3 text-base shadow-sm transition-all placeholder:text-muted-foreground focus-visible:border-primary/40 focus-visible:ring-4 focus-visible:ring-primary/10"
+          className="min-h-[140px] rounded-xl border-border/60 bg-smoke/50 px-4 py-3 text-base text-bone shadow-none transition-all placeholder:text-muted-foreground focus-visible:border-brand-fire/50 focus-visible:ring-4 focus-visible:ring-brand-fire/10"
         />
       </div>
 
@@ -130,7 +130,7 @@ export function ContactForm() {
       </Button>
 
       {status === "success" && (
-        <p className="rounded-xl bg-burnt/10 px-4 py-3 text-sm font-medium text-burnt">
+        <p className="rounded-xl bg-brand-fire/10 border border-brand-fire/20 px-4 py-3 text-sm font-medium text-bone">
           Message sent. We typically respond within 1–2 business days.
         </p>
       )}

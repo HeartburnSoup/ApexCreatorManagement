@@ -7,7 +7,7 @@ type ApexLogoProps = {
 };
 
 const BONE = "#F0EDCC";
-const CHARCOAL = "#111111";
+const SMOKE = "#312529";
 const FIRE = "#FF0100";
 const BURNT = "#921B1D";
 
@@ -69,7 +69,7 @@ export function ApexLogo({ className = "", animated = false, size = "md" }: Apex
             ))}
           </clipPath>
           <linearGradient id={`${uid}-water`} x1="0" y1="1" x2="0" y2="0">
-            <stop offset="0%" stopColor={CHARCOAL} />
+            <stop offset="0%" stopColor={SMOKE} />
             <stop offset="45%" stopColor={BURNT} />
             <stop offset="100%" stopColor={FIRE} stopOpacity="0.95" />
           </linearGradient>
@@ -80,7 +80,7 @@ export function ApexLogo({ className = "", animated = false, size = "md" }: Apex
           </linearGradient>
         </defs>
 
-        <path d={FRAME_PATH} fill={CHARCOAL} />
+        <path d={FRAME_PATH} fill={SMOKE} />
 
         {animated ? (
           <g clipPath={`url(#${uid}-interior)`}>
