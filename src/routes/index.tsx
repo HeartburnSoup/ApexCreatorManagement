@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { ContactForm } from "@/components/ContactForm";
-import { ApexLogo } from "@/components/marketing/ApexLogo";
+import { HeroHighlights } from "@/components/marketing/HeroHighlights";
 import { SiteFooter } from "@/components/marketing/SiteFooter";
 import { SiteHeader } from "@/components/marketing/SiteHeader";
 
@@ -62,24 +62,24 @@ function Index() {
 
       <main>
         {/* Hero */}
-        <section className="relative min-h-0 sm:min-h-[92vh] flex items-center py-12 sm:py-20 overflow-hidden">
-          <div className="absolute top-16 right-[5%] w-48 sm:w-72 h-48 sm:h-72 rounded-full bg-brand-cyan/12 blur-3xl animate-orb" aria-hidden />
-          <div className="absolute bottom-10 left-[5%] w-64 sm:w-96 h-64 sm:h-96 rounded-full bg-primary/6 blur-3xl animate-orb" style={{ animationDelay: "2s" }} aria-hidden />
+        <section className="relative min-h-0 sm:min-h-[88vh] flex items-center py-14 sm:py-24 overflow-hidden">
+          <div className="absolute top-16 right-[5%] w-48 sm:w-72 h-48 sm:h-72 rounded-full bg-brand-cyan/10 blur-3xl animate-orb" aria-hidden />
+          <div className="absolute bottom-10 left-[5%] w-64 sm:w-96 h-64 sm:h-96 rounded-full bg-primary/5 blur-3xl animate-orb" style={{ animationDelay: "2s" }} aria-hidden />
 
-          <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center relative z-10">
-            <div className="animate-reveal order-2 lg:order-1">
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] mb-4 sm:mb-6 pr-1">
+          <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
+            <div className="animate-reveal max-w-2xl">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.06] mb-4 sm:mb-6 pr-1">
                 Building Influential{" "}
                 <span className="text-gradient italic pr-2">Brands</span>
                 <span className="text-foreground">.</span>
               </h1>
-              <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-muted-foreground mb-4 sm:mb-6 text-balance">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-muted-foreground mb-5 sm:mb-6 text-balance">
                 Creating Meaningful Partnerships.
               </p>
-              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-xl mb-3 sm:mb-4 text-pretty leading-relaxed">
+              <p className="text-base sm:text-lg text-muted-foreground max-w-xl mb-4 text-pretty leading-relaxed">
                 Apex represents creators, influencers, athletes, and digital entrepreneurs, transforming online presence into sustainable businesses.
               </p>
-              <p className="text-sm sm:text-base text-muted-foreground/90 max-w-xl mb-8 sm:mb-10 italic text-pretty">
+              <p className="text-sm sm:text-base text-muted-foreground/90 max-w-xl mb-8 sm:mb-10 italic text-pretty leading-relaxed">
                 Our mission is simple: empower creators to focus on creating while we handle the business behind the brand.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -89,25 +89,26 @@ function Index() {
                 >
                   Get in touch
                 </a>
+                <a
+                  href="#services"
+                  className="inline-flex justify-center px-8 py-4 min-h-[48px] border border-border bg-card/60 text-sm sm:text-base font-semibold uppercase tracking-wide rounded-full hover:border-brand-cyan/40 hover:text-foreground transition-colors"
+                >
+                  Our services
+                </a>
               </div>
             </div>
 
-            <div className="flex justify-center animate-reveal [animation-delay:200ms] order-1 lg:order-2">
-              <div className="relative w-full max-w-[min(100%,18rem)] sm:max-w-md mx-auto">
-                <div className="absolute -inset-4 sm:-inset-8 rounded-3xl bg-gradient-to-br from-brand-cyan/15 via-transparent to-primary/5 animate-gradient" aria-hidden />
-                <ApexLogo size="hero" animated className="mx-auto" />
-              </div>
-            </div>
+            <HeroHighlights />
           </div>
         </section>
 
-        {/* Stats strip */}
+        {/* Stats strip — compact bar below hero */}
         <section className="border-y border-border bg-card/80 backdrop-blur-sm">
-          <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+          <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 grid grid-cols-3 gap-4 sm:gap-8">
             {stats.map((s) => (
-              <div key={s.label} className="text-center sm:text-left">
-                <p className="text-4xl font-black text-brand-cyan">{s.value}</p>
-                <p className="text-base text-muted-foreground mt-1 font-medium">{s.label}</p>
+              <div key={s.label} className="text-center">
+                <p className="text-2xl sm:text-4xl font-black text-brand-cyan">{s.value}</p>
+                <p className="text-xs sm:text-base text-muted-foreground mt-1 font-medium">{s.label}</p>
               </div>
             ))}
           </div>

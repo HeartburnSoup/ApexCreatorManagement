@@ -1,8 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 
-const navLinks = [
-  { href: "/#services", label: "Services" },
+import { ApexLogo } from "./ApexLogo";
+
+const navLinks = [  { href: "/#services", label: "Services" },
   { href: "/#niches", label: "Talent" },
   { href: "/#brands", label: "Brands" },
   { href: "/#contact", label: "Contact" },
@@ -14,21 +15,17 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 glass border-b border-border/80">
       <nav className="container mx-auto relative flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4">
-        <Link to="/" className="group inline-flex flex-col gap-1.5 shrink-0">
-          <span className="brand-wordmark text-[1.75rem] sm:text-[2rem] font-bold leading-none tracking-[-0.05em]">
-            Apex
-          </span>
-          <span className="flex items-center gap-2.5">
-            <span
-              className="h-[2px] w-7 rounded-full bg-brand-cyan group-hover:w-11 transition-all duration-300"
-              aria-hidden
-            />
-            <span className="text-[0.62rem] sm:text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-muted-foreground group-hover:text-foreground transition-colors">
+        <Link to="/" className="group flex items-center gap-3 shrink-0">
+          <ApexLogo size="sm" />
+          <span className="hidden sm:flex flex-col gap-1">
+            <span className="brand-wordmark text-xl font-bold leading-none tracking-[-0.04em]">
+              Apex
+            </span>
+            <span className="text-[0.6rem] font-semibold uppercase tracking-[0.28em] text-muted-foreground group-hover:text-foreground transition-colors">
               Creator Management
             </span>
           </span>
         </Link>
-
         <div className="hidden lg:flex gap-10 text-sm font-medium text-muted-foreground">
           {navLinks.map((link) => (
             <a
