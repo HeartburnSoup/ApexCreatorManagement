@@ -63,8 +63,8 @@ function Index() {
       <main>
         {/* Hero */}
         <section className="relative min-h-0 sm:min-h-[92vh] flex items-center py-12 sm:py-20 overflow-hidden">
-          <div className="absolute top-16 right-[5%] w-48 sm:w-72 h-48 sm:h-72 rounded-full bg-primary/8 blur-3xl animate-orb" aria-hidden />
-          <div className="absolute bottom-10 left-[5%] w-64 sm:w-96 h-64 sm:h-96 rounded-full bg-primary/5 blur-3xl animate-orb" style={{ animationDelay: "2s" }} aria-hidden />
+          <div className="absolute top-16 right-[5%] w-48 sm:w-72 h-48 sm:h-72 rounded-full bg-brand-cyan/12 blur-3xl animate-orb" aria-hidden />
+          <div className="absolute bottom-10 left-[5%] w-64 sm:w-96 h-64 sm:h-96 rounded-full bg-primary/6 blur-3xl animate-orb" style={{ animationDelay: "2s" }} aria-hidden />
 
           <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center relative z-10">
             <div className="animate-reveal order-2 lg:order-1">
@@ -85,7 +85,7 @@ function Index() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a
                   href="#contact"
-                  className="inline-flex justify-center px-8 py-4 min-h-[48px] bg-primary text-primary-foreground text-sm sm:text-base font-bold uppercase tracking-wide rounded-full hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-lg shadow-primary/20"
+                  className="inline-flex justify-center px-8 py-4 min-h-[48px] bg-primary text-primary-foreground text-sm sm:text-base font-bold uppercase tracking-wide rounded-full hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-lg shadow-primary/15 hover:shadow-brand-cyan/20"
                 >
                   Get in touch
                 </a>
@@ -94,7 +94,7 @@ function Index() {
 
             <div className="flex justify-center animate-reveal [animation-delay:200ms] order-1 lg:order-2">
               <div className="relative w-full max-w-[min(100%,18rem)] sm:max-w-md mx-auto">
-                <div className="absolute -inset-4 sm:-inset-8 rounded-3xl bg-gradient-to-br from-primary/10 via-transparent to-primary/5 animate-gradient" aria-hidden />
+                <div className="absolute -inset-4 sm:-inset-8 rounded-3xl bg-gradient-to-br from-brand-cyan/15 via-transparent to-primary/5 animate-gradient" aria-hidden />
                 <ApexLogo size="hero" animated className="mx-auto" />
               </div>
             </div>
@@ -106,7 +106,7 @@ function Index() {
           <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             {stats.map((s) => (
               <div key={s.label} className="text-center sm:text-left">
-                <p className="text-4xl font-black text-primary">{s.value}</p>
+                <p className="text-4xl font-black text-brand-cyan">{s.value}</p>
                 <p className="text-base text-muted-foreground mt-1 font-medium">{s.label}</p>
               </div>
             ))}
@@ -117,7 +117,7 @@ function Index() {
         <section id="services" className="py-16 sm:py-24 lg:py-32">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-2xl mb-10 sm:mb-16">
-              <p className="text-sm font-bold uppercase tracking-widest text-primary mb-3">What we do</p>
+              <p className="text-sm font-bold uppercase tracking-widest text-brand-cyan mb-3">What we do</p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-balance">Full-service creator management</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -139,20 +139,20 @@ function Index() {
         </section>
 
         {/* Niches */}
-        <section id="niches" className="py-16 sm:py-24 lg:py-32 bg-accent text-accent-foreground relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "32px 32px" }} aria-hidden />
+        <section id="niches" className="py-16 sm:py-24 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden">
+          <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, #02EFF0 1px, transparent 0)", backgroundSize: "32px 32px" }} aria-hidden />
           <div className="container mx-auto px-4 sm:px-6 relative z-10">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight mb-4 max-w-3xl text-balance">
               Looking for Representation?
             </h2>
-            <p className="text-lg sm:text-xl text-accent-foreground/80 max-w-2xl mb-10 text-pretty leading-relaxed">
+            <p className="text-lg sm:text-xl text-primary-foreground/75 max-w-2xl mb-10 text-pretty leading-relaxed">
               We are actively seeking creators across today's fastest-growing platforms. Whether you're emerging or established, we'd love to learn more about your brand and vision.
             </p>
             <div className="flex flex-wrap gap-3">
               {niches.map((n) => (
                 <span
                   key={n}
-                  className="px-5 py-2.5 rounded-full border border-accent-foreground/25 bg-accent-foreground/10 text-sm font-semibold uppercase tracking-wide backdrop-blur-sm"
+                  className="px-5 py-2.5 rounded-full border border-brand-cyan/30 bg-brand-cyan/10 text-sm font-semibold uppercase tracking-wide backdrop-blur-sm text-brand-cyan"
                 >
                   {n}
                 </span>
@@ -193,7 +193,7 @@ function Index() {
               </p>
               <a
                 href="#contact"
-                className="inline-flex justify-center w-full sm:w-auto px-8 py-4 min-h-[48px] bg-accent text-accent-foreground text-sm sm:text-base font-bold uppercase tracking-wide rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
+                className="inline-flex justify-center w-full sm:w-auto px-8 py-4 min-h-[48px] bg-brand-cyan text-primary text-sm sm:text-base font-bold uppercase tracking-wide rounded-full hover:brightness-105 hover:shadow-[0_0_24px_rgba(2,239,240,0.35)] transition-all"
               >
                 Start a partnership →
               </a>

@@ -94,8 +94,8 @@ export function ContactForm() {
               className={cn(
                 "rounded-full px-4 py-2.5 text-sm font-medium transition-all sm:w-auto",
                 form.inquiryType === option.value
-                  ? "bg-primary text-primary-foreground shadow-md shadow-primary/15"
-                  : "bg-card border border-border/70 text-muted-foreground hover:border-primary/30 hover:text-foreground",
+                  ? "bg-brand-cyan text-primary shadow-md shadow-brand-cyan/20"
+                  : "bg-card border border-border/70 text-muted-foreground hover:border-brand-cyan/40 hover:text-foreground",
               )}
             >
               {option.label}
@@ -124,7 +124,7 @@ export function ContactForm() {
         type="submit"
         disabled={status === "submitting"}
         size="lg"
-        className="mt-2 w-full h-12 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg shadow-primary/20 hover:scale-[1.01] active:scale-[0.99] transition-transform"
+        className="mt-2 w-full h-12 rounded-full text-sm font-bold uppercase tracking-wide bg-brand-cyan text-primary shadow-lg shadow-brand-cyan/25 hover:brightness-105 hover:shadow-brand-cyan/35 hover:scale-[1.01] active:scale-[0.99] transition-all"
       >
         {status === "submitting" ? "Sending…" : "Send message"}
       </Button>

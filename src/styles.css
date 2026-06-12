@@ -3,35 +3,37 @@
 @import "tw-animate-css";
 
 @theme {
-  --color-background: #EEEBE0;
-  --color-foreground: #151515;
-  --color-muted: #6b6b63;
-  --color-primary: #1A3350;
-  --color-primary-foreground: #EEEBE0;
-  --color-border: #d8d4c8;
-  --color-card: #f7f5ef;
-  --color-card-foreground: #151515;
-  --color-popover: #f7f5ef;
-  --color-popover-foreground: #151515;
-  --color-secondary: #e4e0d4;
-  --color-secondary-foreground: #151515;
-  --color-muted-foreground: #4a4a44;
-  --color-accent: #1A3350;
-  --color-accent-foreground: #EEEBE0;
+  --color-background: #FFFFFF;
+  --color-foreground: #0F282F;
+  --color-muted: #5a6b70;
+  --color-primary: #0F282F;
+  --color-primary-foreground: #FFFFFF;
+  --color-brand-cyan: #02EFF0;
+  --color-border: #dce5e8;
+  --color-card: #f4f8f9;
+  --color-card-foreground: #0F282F;
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #0F282F;
+  --color-secondary: #e8f4f5;
+  --color-secondary-foreground: #0F282F;
+  --color-muted-foreground: #4a5c62;
+  --color-accent: #02EFF0;
+  --color-accent-foreground: #0F282F;
   --color-destructive: hsl(0 70% 50%);
   --color-destructive-foreground: #ffffff;
-  --color-input: #d8d4c8;
-  --color-ring: #1A3350;
-  --color-ring-offset-background: #EEEBE0;
-  --color-sidebar: #f7f5ef;
-  --color-sidebar-foreground: #151515;
-  --color-sidebar-primary: #1A3350;
-  --color-sidebar-primary-foreground: #EEEBE0;
-  --color-sidebar-accent: #e4e0d4;
-  --color-sidebar-accent-foreground: #151515;
-  --color-sidebar-border: #d8d4c8;
-  --color-sidebar-ring: #1A3350;
+  --color-input: #dce5e8;
+  --color-ring: #02EFF0;
+  --color-ring-offset-background: #FFFFFF;
+  --color-sidebar: #f4f8f9;
+  --color-sidebar-foreground: #0F282F;
+  --color-sidebar-primary: #0F282F;
+  --color-sidebar-primary-foreground: #FFFFFF;
+  --color-sidebar-accent: #e8f4f5;
+  --color-sidebar-accent-foreground: #0F282F;
+  --color-sidebar-border: #dce5e8;
+  --color-sidebar-ring: #02EFF0;
   --font-display: "Inter", sans-serif;
+  --font-brand: "Space Grotesk", "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   --radius: 0.75rem;
   --radius-sm: calc(var(--radius) - 4px);
@@ -140,7 +142,7 @@
 .text-gradient {
   display: inline-block;
   padding-right: 0.12em;
-  background: linear-gradient(135deg, #151515 0%, #1A3350 45%, #1A3350 55%, #151515 100%);
+  background: linear-gradient(135deg, #0F282F 0%, #02EFF0 50%, #0F282F 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -148,18 +150,26 @@
   box-decoration-break: clone;
 }
 
+.brand-wordmark {
+  font-family: var(--font-brand);
+  background: linear-gradient(120deg, #0F282F 0%, #0F282F 50%, #02EFF0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .glass {
-  background: rgba(247, 245, 239, 0.88);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(25, 56, 66, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(15, 40, 47, 0.06);
 }
 
 .mesh-bg {
-  background-color: #EEEBE0;
+  background-color: #FFFFFF;
   background-image:
-    radial-gradient(at 15% 15%, rgba(26, 51, 80, 0.06) 0, transparent 45%),
-    radial-gradient(at 85% 20%, rgba(26, 51, 80, 0.04) 0, transparent 40%),
-    radial-gradient(at 50% 90%, rgba(26, 51, 80, 0.05) 0, transparent 45%);
+    radial-gradient(at 12% 18%, rgba(2, 239, 240, 0.09) 0, transparent 42%),
+    radial-gradient(at 88% 12%, rgba(15, 40, 47, 0.05) 0, transparent 38%),
+    radial-gradient(at 50% 95%, rgba(2, 239, 240, 0.06) 0, transparent 45%);
 }
 
 @layer base {
@@ -182,7 +192,7 @@
     }
   }
   ::selection {
-    background-color: var(--color-primary);
-    color: var(--color-primary-foreground);
+    background-color: var(--color-brand-cyan);
+    color: var(--color-primary);
   }
 }

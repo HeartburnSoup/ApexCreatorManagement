@@ -1,8 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 
-import { ApexLogo } from "./ApexLogo";
-
 const navLinks = [
   { href: "/#services", label: "Services" },
   { href: "/#niches", label: "Talent" },
@@ -14,18 +12,30 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 glass border-b border-border/60">
-      <nav className="container mx-auto relative flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
-        <Link to="/" className="flex items-center gap-3 group">
-          <ApexLogo size="sm" />
-          <span className="font-bold tracking-tight text-lg uppercase hidden sm:block group-hover:text-primary transition-colors">
+    <header className="sticky top-0 z-50 glass border-b border-border/80">
+      <nav className="container mx-auto relative flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4">
+        <Link to="/" className="group inline-flex flex-col gap-1.5 shrink-0">
+          <span className="brand-wordmark text-[1.75rem] sm:text-[2rem] font-bold leading-none tracking-[-0.05em]">
             Apex
+          </span>
+          <span className="flex items-center gap-2.5">
+            <span
+              className="h-[2px] w-7 rounded-full bg-brand-cyan group-hover:w-11 transition-all duration-300"
+              aria-hidden
+            />
+            <span className="text-[0.62rem] sm:text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-muted-foreground group-hover:text-foreground transition-colors">
+              Creator Management
+            </span>
           </span>
         </Link>
 
-        <div className="hidden lg:flex gap-10 text-sm font-medium uppercase tracking-wide text-muted-foreground">
+        <div className="hidden lg:flex gap-10 text-sm font-medium text-muted-foreground">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="hover:text-primary transition-colors">
+            <a
+              key={link.href}
+              href={link.href}
+              className="relative py-1 hover:text-foreground transition-colors after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-brand-cyan after:transition-all hover:after:w-full"
+            >
               {link.label}
             </a>
           ))}
@@ -34,7 +44,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <a
             href="/#contact"
-            className="hidden sm:inline-flex px-5 py-2.5 bg-accent text-accent-foreground text-sm font-semibold uppercase tracking-wide rounded-full hover:bg-primary hover:text-primary-foreground transition-all shadow-md"
+            className="hidden sm:inline-flex px-5 py-2.5 bg-brand-cyan text-primary text-sm font-bold uppercase tracking-wide rounded-full hover:brightness-105 hover:shadow-[0_0_24px_rgba(2,239,240,0.35)] transition-all"
           >
             Inquiry
           </a>
@@ -57,7 +67,7 @@ export function SiteHeader() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-base font-medium uppercase tracking-wide text-muted-foreground hover:text-primary py-1 min-h-[44px] flex items-center"
+                className="text-base font-medium text-muted-foreground hover:text-foreground py-1 min-h-[44px] flex items-center"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
@@ -65,7 +75,7 @@ export function SiteHeader() {
             ))}
             <a
               href="/#contact"
-              className="inline-flex justify-center items-center min-h-[48px] px-5 py-3 bg-primary text-primary-foreground text-sm font-semibold uppercase tracking-wide rounded-full"
+              className="inline-flex justify-center items-center min-h-[48px] px-5 py-3 bg-brand-cyan text-primary text-sm font-bold uppercase tracking-wide rounded-full"
               onClick={() => setMenuOpen(false)}
             >
               Inquiry
