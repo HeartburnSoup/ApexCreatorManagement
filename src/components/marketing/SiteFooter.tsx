@@ -9,7 +9,7 @@ export function SiteFooter() {
           </p>
         </div>
         <div className="flex flex-wrap gap-6 text-sm font-medium text-muted-foreground">
-          <a href="/#contact" className="hover:text-brand-cyan transition-colors">
+          <a href="/#contact" className="hover:text-brand-fire transition-colors">
             Contact
           </a>
         </div>

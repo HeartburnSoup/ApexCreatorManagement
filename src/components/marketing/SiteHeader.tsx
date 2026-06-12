@@ -3,7 +3,8 @@ import { useState } from "react";
 
 import { ApexLogo } from "./ApexLogo";
 
-const navLinks = [  { href: "/#services", label: "Services" },
+const navLinks = [
+  { href: "/#services", label: "Services" },
   { href: "/#niches", label: "Talent" },
   { href: "/#brands", label: "Brands" },
   { href: "/#contact", label: "Contact" },
@@ -31,7 +32,7 @@ export function SiteHeader() {
             <a
               key={link.href}
               href={link.href}
-              className="relative py-1 hover:text-foreground transition-colors after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-brand-cyan after:transition-all hover:after:w-full"
+              className="relative py-1 hover:text-foreground transition-colors after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-brand-fire after:transition-all hover:after:w-full"
             >
               {link.label}
             </a>
@@ -41,7 +42,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <a
             href="/#contact"
-            className="hidden sm:inline-flex px-5 py-2.5 bg-brand-cyan text-primary text-sm font-bold uppercase tracking-wide rounded-full hover:brightness-105 hover:shadow-[0_0_24px_rgba(2,239,240,0.35)] transition-all"
+            className="hidden sm:inline-flex px-5 py-2.5 bg-brand-fire text-bone text-sm font-bold uppercase tracking-wide rounded-full hover:brightness-105 hover:shadow-[0_0_24px_rgba(255,1,0,0.3)] transition-all"
           >
             Inquiry
           </a>
@@ -72,7 +73,7 @@ export function SiteHeader() {
             ))}
             <a
               href="/#contact"
-              className="inline-flex justify-center items-center min-h-[48px] px-5 py-3 bg-brand-cyan text-primary text-sm font-bold uppercase tracking-wide rounded-full"
+              className="inline-flex justify-center items-center min-h-[48px] px-5 py-3 bg-brand-fire text-bone text-sm font-bold uppercase tracking-wide rounded-full"
               onClick={() => setMenuOpen(false)}
             >
               Inquiry

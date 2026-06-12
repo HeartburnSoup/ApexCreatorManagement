@@ -6,9 +6,10 @@ type ApexLogoProps = {
   size?: "sm" | "md" | "lg" | "hero";
 };
 
-const BRAND_WHITE = "#FFFFFF";
-const STORM_GREEN = "#0F282F";
-const VIVID_CYAN = "#02EFF0";
+const BONE = "#F0EDCC";
+const CHARCOAL = "#111111";
+const FIRE = "#FF0100";
+const BURNT = "#921B1D";
 
 const sizeMap = {
   sm: "w-10 h-10",
@@ -51,7 +52,7 @@ export function ApexLogo({ className = "", animated = false, size = "md" }: Apex
     >
       {animated && (
         <div
-          className="absolute inset-0 rounded-full bg-brand-cyan/12 blur-2xl animate-logo-ring"
+          className="absolute inset-0 rounded-full bg-brand-fire/10 blur-2xl animate-logo-ring"
           aria-hidden
         />
       )}
@@ -68,9 +69,9 @@ export function ApexLogo({ className = "", animated = false, size = "md" }: Apex
             ))}
           </clipPath>
           <linearGradient id={`${uid}-water`} x1="0" y1="1" x2="0" y2="0">
-            <stop offset="0%" stopColor={STORM_GREEN} />
-            <stop offset="45%" stopColor="#0a3d45" />
-            <stop offset="100%" stopColor={VIVID_CYAN} stopOpacity="0.95" />
+            <stop offset="0%" stopColor={CHARCOAL} />
+            <stop offset="45%" stopColor={BURNT} />
+            <stop offset="100%" stopColor={FIRE} stopOpacity="0.95" />
           </linearGradient>
           <linearGradient id={`${uid}-surface`} x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
@@ -79,11 +80,11 @@ export function ApexLogo({ className = "", animated = false, size = "md" }: Apex
           </linearGradient>
         </defs>
 
-        <path d={FRAME_PATH} fill={STORM_GREEN} />
+        <path d={FRAME_PATH} fill={CHARCOAL} />
 
         {animated ? (
           <g clipPath={`url(#${uid}-interior)`}>
-            <rect x="0" y="0" width="1254" height="1254" fill={BRAND_WHITE} />
+            <rect x="0" y="0" width="1254" height="1254" fill={BONE} />
             {RAIN_DROPS.map((drop, i) => (
               <line
                 key={i}
@@ -91,7 +92,7 @@ export function ApexLogo({ className = "", animated = false, size = "md" }: Apex
                 y1={0}
                 x2={drop.x}
                 y2={36}
-                stroke={VIVID_CYAN}
+                stroke={FIRE}
                 strokeWidth={8}
                 strokeLinecap="round"
                 opacity={0.55}
@@ -112,7 +113,7 @@ export function ApexLogo({ className = "", animated = false, size = "md" }: Apex
             </g>
           </g>
         ) : (
-          INTERIOR_PATHS.map((d, i) => <path key={i} d={d} fill={BRAND_WHITE} />)
+          INTERIOR_PATHS.map((d, i) => <path key={i} d={d} fill={BONE} />)
         )}
       </svg>
     </div>

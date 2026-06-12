@@ -63,7 +63,7 @@ function Index() {
       <main>
         {/* Hero */}
         <section className="relative min-h-0 sm:min-h-[88vh] flex items-center py-14 sm:py-24 overflow-hidden">
-          <div className="absolute top-16 right-[5%] w-48 sm:w-72 h-48 sm:h-72 rounded-full bg-brand-cyan/10 blur-3xl animate-orb" aria-hidden />
+          <div className="absolute top-16 right-[5%] w-48 sm:w-72 h-48 sm:h-72 rounded-full bg-brand-fire/10 blur-3xl animate-orb" aria-hidden />
           <div className="absolute bottom-10 left-[5%] w-64 sm:w-96 h-64 sm:h-96 rounded-full bg-primary/5 blur-3xl animate-orb" style={{ animationDelay: "2s" }} aria-hidden />
 
           <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
@@ -85,13 +85,13 @@ function Index() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a
                   href="#contact"
-                  className="inline-flex justify-center px-8 py-4 min-h-[48px] bg-primary text-primary-foreground text-sm sm:text-base font-bold uppercase tracking-wide rounded-full hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-lg shadow-primary/15 hover:shadow-brand-cyan/20"
+                  className="inline-flex justify-center px-8 py-4 min-h-[48px] bg-brand-fire text-bone text-sm sm:text-base font-bold uppercase tracking-wide rounded-full hover:brightness-105 hover:shadow-[0_0_24px_rgba(255,1,0,0.35)] transition-all"
                 >
                   Get in touch
                 </a>
                 <a
                   href="#services"
-                  className="inline-flex justify-center px-8 py-4 min-h-[48px] border border-border bg-card/60 text-sm sm:text-base font-semibold uppercase tracking-wide rounded-full hover:border-brand-cyan/40 hover:text-foreground transition-colors"
+                  className="inline-flex justify-center px-8 py-4 min-h-[48px] border border-border bg-card/60 text-sm sm:text-base font-semibold uppercase tracking-wide rounded-full hover:border-brand-fire/40 hover:text-foreground transition-colors"
                 >
                   Our services
                 </a>
@@ -107,7 +107,7 @@ function Index() {
           <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 grid grid-cols-3 gap-4 sm:gap-8">
             {stats.map((s) => (
               <div key={s.label} className="text-center">
-                <p className="text-2xl sm:text-4xl font-black text-brand-cyan">{s.value}</p>
+                <p className="text-2xl sm:text-4xl font-black text-brand-fire">{s.value}</p>
                 <p className="text-xs sm:text-base text-muted-foreground mt-1 font-medium">{s.label}</p>
               </div>
             ))}
@@ -118,7 +118,7 @@ function Index() {
         <section id="services" className="py-16 sm:py-24 lg:py-32">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-2xl mb-10 sm:mb-16">
-              <p className="text-sm font-bold uppercase tracking-widest text-brand-cyan mb-3">What we do</p>
+              <p className="text-sm font-bold uppercase tracking-widest text-brand-fire mb-3">What we do</p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-balance">Full-service creator management</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -128,7 +128,7 @@ function Index() {
                   className="group glass rounded-2xl p-6 sm:p-8 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300 animate-reveal"
                   style={{ animationDelay: `${i * 80}ms` }}
                 >
-                  <span className="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-primary/10 text-primary font-bold text-lg mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  <span className="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-burnt/10 text-burnt font-bold text-lg mb-5 group-hover:bg-brand-fire group-hover:text-bone transition-colors">
                     {s.n}
                   </span>
                   <h3 className="text-xl font-bold mb-3">{s.t}</h3>
@@ -140,20 +140,20 @@ function Index() {
         </section>
 
         {/* Niches */}
-        <section id="niches" className="py-16 sm:py-24 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, #02EFF0 1px, transparent 0)", backgroundSize: "32px 32px" }} aria-hidden />
+        <section id="niches" className="py-16 sm:py-24 lg:py-32 bg-smoke text-bone relative overflow-hidden">
+          <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, #FF0100 1px, transparent 0)", backgroundSize: "32px 32px" }} aria-hidden />
           <div className="container mx-auto px-4 sm:px-6 relative z-10">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight mb-4 max-w-3xl text-balance">
               Looking for Representation?
             </h2>
-            <p className="text-lg sm:text-xl text-primary-foreground/75 max-w-2xl mb-10 text-pretty leading-relaxed">
+            <p className="text-lg sm:text-xl text-bone/75 max-w-2xl mb-10 text-pretty leading-relaxed">
               We are actively seeking creators across today's fastest-growing platforms. Whether you're emerging or established, we'd love to learn more about your brand and vision.
             </p>
             <div className="flex flex-wrap gap-3">
               {niches.map((n) => (
                 <span
                   key={n}
-                  className="px-5 py-2.5 rounded-full border border-brand-cyan/30 bg-brand-cyan/10 text-sm font-semibold uppercase tracking-wide backdrop-blur-sm text-brand-cyan"
+                  className="px-5 py-2.5 rounded-full border border-brand-fire/35 bg-brand-fire/10 text-sm font-semibold uppercase tracking-wide backdrop-blur-sm text-brand-fire"
                 >
                   {n}
                 </span>
@@ -172,7 +172,7 @@ function Index() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {whyUs.map((w, i) => (
                 <div key={w.n} className="text-center p-6 animate-reveal" style={{ animationDelay: `${i * 100}ms` }}>
-                  <div className="text-5xl font-black text-primary/30 mb-4">{w.n}</div>
+                  <div className="text-5xl font-black text-brand-fire/40 mb-4">{w.n}</div>
                   <h3 className="text-lg font-bold mb-3">{w.t}</h3>
                   <p className="text-base text-muted-foreground leading-relaxed">{w.d}</p>
                 </div>
@@ -187,14 +187,14 @@ function Index() {
             <div>
               <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">For Brands</p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight leading-tight mb-6 sm:mb-8 text-balance">
-                Partner with creators who <span className="text-primary italic">move</span> audiences.
+                Partner with creators who <span className="text-brand-fire italic">move</span> audiences.
               </h2>
               <p className="text-lg text-muted-foreground mb-8 text-pretty leading-relaxed">
                 Looking to collaborate with creators who drive engagement and deliver results? We help brands identify, negotiate, and manage partnerships aligned with your marketing goals.
               </p>
               <a
                 href="#contact"
-                className="inline-flex justify-center w-full sm:w-auto px-8 py-4 min-h-[48px] bg-brand-cyan text-primary text-sm sm:text-base font-bold uppercase tracking-wide rounded-full hover:brightness-105 hover:shadow-[0_0_24px_rgba(2,239,240,0.35)] transition-all"
+                className="inline-flex justify-center w-full sm:w-auto px-8 py-4 min-h-[48px] bg-brand-fire text-bone text-sm sm:text-base font-bold uppercase tracking-wide rounded-full hover:brightness-105 hover:shadow-[0_0_24px_rgba(255,1,0,0.3)] transition-all"
               >
                 Start a partnership →
               </a>
@@ -206,7 +206,7 @@ function Index() {
                 { n: "03", t: "Accountable", d: "Single point of contact, measurable outcomes." },
               ].map((item) => (
                 <div key={item.n} className="flex gap-5 p-6 rounded-2xl border border-border bg-background hover:border-primary/40 transition-colors">
-                  <span className="text-2xl font-black text-primary">{item.n}</span>
+                  <span className="text-2xl font-black text-brand-fire">{item.n}</span>
                   <div>
                     <h3 className="text-lg font-bold">{item.t}</h3>
                     <p className="text-base text-muted-foreground mt-1">{item.d}</p>

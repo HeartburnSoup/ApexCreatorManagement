@@ -3,35 +3,38 @@
 @import "tw-animate-css";
 
 @theme {
-  --color-background: #FFFFFF;
-  --color-foreground: #0F282F;
-  --color-muted: #5a6b70;
-  --color-primary: #0F282F;
-  --color-primary-foreground: #FFFFFF;
-  --color-brand-cyan: #02EFF0;
-  --color-border: #dce5e8;
-  --color-card: #f4f8f9;
-  --color-card-foreground: #0F282F;
-  --color-popover: #FFFFFF;
-  --color-popover-foreground: #0F282F;
-  --color-secondary: #e8f4f5;
-  --color-secondary-foreground: #0F282F;
-  --color-muted-foreground: #4a5c62;
-  --color-accent: #02EFF0;
-  --color-accent-foreground: #0F282F;
-  --color-destructive: hsl(0 70% 50%);
-  --color-destructive-foreground: #ffffff;
-  --color-input: #dce5e8;
-  --color-ring: #02EFF0;
-  --color-ring-offset-background: #FFFFFF;
-  --color-sidebar: #f4f8f9;
-  --color-sidebar-foreground: #0F282F;
-  --color-sidebar-primary: #0F282F;
-  --color-sidebar-primary-foreground: #FFFFFF;
-  --color-sidebar-accent: #e8f4f5;
-  --color-sidebar-accent-foreground: #0F282F;
-  --color-sidebar-border: #dce5e8;
-  --color-sidebar-ring: #02EFF0;
+  --color-background: #F0EDCC;
+  --color-foreground: #111111;
+  --color-muted: #6b6358;
+  --color-primary: #111111;
+  --color-primary-foreground: #F0EDCC;
+  --color-brand-fire: #FF0100;
+  --color-smoke: #312529;
+  --color-burnt: #921B1D;
+  --color-bone: #F0EDCC;
+  --color-border: #d4cbb0;
+  --color-card: #faf6e4;
+  --color-card-foreground: #111111;
+  --color-popover: #F0EDCC;
+  --color-popover-foreground: #111111;
+  --color-secondary: #e8dfc4;
+  --color-secondary-foreground: #111111;
+  --color-muted-foreground: #5c5348;
+  --color-accent: #921B1D;
+  --color-accent-foreground: #F0EDCC;
+  --color-destructive: #FF0100;
+  --color-destructive-foreground: #F0EDCC;
+  --color-input: #d4cbb0;
+  --color-ring: #FF0100;
+  --color-ring-offset-background: #F0EDCC;
+  --color-sidebar: #faf6e4;
+  --color-sidebar-foreground: #111111;
+  --color-sidebar-primary: #111111;
+  --color-sidebar-primary-foreground: #F0EDCC;
+  --color-sidebar-accent: #e8dfc4;
+  --color-sidebar-accent-foreground: #111111;
+  --color-sidebar-border: #d4cbb0;
+  --color-sidebar-ring: #FF0100;
   --font-display: "Inter", sans-serif;
   --font-brand: "Space Grotesk", "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
@@ -85,35 +88,9 @@
   transform-box: fill-box;
 }
 
-@keyframes water-rise {
-  0%, 100% { transform: translateY(72%); }
-  50% { transform: translateY(38%); }
-}
-
-@keyframes water-surface {
-  0%, 100% { transform: translateY(38%) translateX(0); }
-  50% { transform: translateY(38%) translateX(12px); }
-}
-
-.animate-water-rise {
-  transform: translateY(72%);
-  animation: water-rise 5s ease-in-out infinite;
-  transform-origin: center bottom;
-  transform-box: fill-box;
-}
-
-.animate-water-surface {
-  animation: water-surface 5s ease-in-out infinite;
-}
-
 @keyframes logo-float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
-}
-
-@keyframes logo-spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 @keyframes pulse-ring {
@@ -142,7 +119,7 @@
 .text-gradient {
   display: inline-block;
   padding-right: 0.12em;
-  background: linear-gradient(135deg, #0F282F 0%, #02EFF0 50%, #0F282F 100%);
+  background: linear-gradient(135deg, #111111 0%, #921B1D 45%, #FF0100 55%, #111111 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -152,24 +129,24 @@
 
 .brand-wordmark {
   font-family: var(--font-brand);
-  background: linear-gradient(120deg, #0F282F 0%, #0F282F 50%, #02EFF0 100%);
+  background: linear-gradient(120deg, #111111 0%, #921B1D 55%, #FF0100 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(250, 246, 228, 0.92);
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(15, 40, 47, 0.06);
+  border: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .mesh-bg {
-  background-color: #FFFFFF;
+  background-color: #F0EDCC;
   background-image:
-    radial-gradient(at 12% 18%, rgba(2, 239, 240, 0.09) 0, transparent 42%),
-    radial-gradient(at 88% 12%, rgba(15, 40, 47, 0.05) 0, transparent 38%),
-    radial-gradient(at 50% 95%, rgba(2, 239, 240, 0.06) 0, transparent 45%);
+    radial-gradient(at 12% 18%, rgba(255, 1, 0, 0.06) 0, transparent 42%),
+    radial-gradient(at 88% 12%, rgba(49, 37, 41, 0.06) 0, transparent 38%),
+    radial-gradient(at 50% 95%, rgba(146, 27, 29, 0.05) 0, transparent 45%);
 }
 
 @layer base {
@@ -192,7 +169,7 @@
     }
   }
   ::selection {
-    background-color: var(--color-brand-cyan);
-    color: var(--color-primary);
+    background-color: var(--color-brand-fire);
+    color: var(--color-bone);
   }
 }

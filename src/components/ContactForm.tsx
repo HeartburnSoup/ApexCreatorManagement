@@ -94,8 +94,8 @@ export function ContactForm() {
               className={cn(
                 "rounded-full px-4 py-2.5 text-sm font-medium transition-all sm:w-auto",
                 form.inquiryType === option.value
-                  ? "bg-brand-cyan text-primary shadow-md shadow-brand-cyan/20"
-                  : "bg-card border border-border/70 text-muted-foreground hover:border-brand-cyan/40 hover:text-foreground",
+                  ? "bg-brand-fire text-bone shadow-md shadow-brand-fire/25"
+                  : "bg-card border border-border/70 text-muted-foreground hover:border-brand-fire/40 hover:text-foreground",
               )}
             >
               {option.label}
@@ -124,13 +124,13 @@ export function ContactForm() {
         type="submit"
         disabled={status === "submitting"}
         size="lg"
-        className="mt-2 w-full h-12 rounded-full text-sm font-bold uppercase tracking-wide bg-brand-cyan text-primary shadow-lg shadow-brand-cyan/25 hover:brightness-105 hover:shadow-brand-cyan/35 hover:scale-[1.01] active:scale-[0.99] transition-all"
+        className="mt-2 w-full h-12 rounded-full text-sm font-bold uppercase tracking-wide bg-brand-fire text-bone shadow-lg shadow-brand-fire/25 hover:brightness-105 hover:shadow-brand-fire/35 hover:scale-[1.01] active:scale-[0.99] transition-all"
       >
         {status === "submitting" ? "Sending…" : "Send message"}
       </Button>
 
       {status === "success" && (
-        <p className="rounded-xl bg-primary/8 px-4 py-3 text-sm font-medium text-primary">
+        <p className="rounded-xl bg-burnt/10 px-4 py-3 text-sm font-medium text-burnt">
           Message sent. We typically respond within 1–2 business days.
         </p>
       )}
