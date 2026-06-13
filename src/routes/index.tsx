@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { ContactForm } from "@/components/ContactForm";
-import { HeroAtmosphere } from "@/components/marketing/HeroAtmosphere";
 import { HeroHighlights } from "@/components/marketing/HeroHighlights";
 import { SiteFooter } from "@/components/marketing/SiteFooter";
 import { SiteHeader } from "@/components/marketing/SiteHeader";
@@ -81,12 +80,17 @@ function Index() {
       <SiteHeader />
 
       <main>
-        <HeroAtmosphere />
-
         {/* Hero */}
-        <section className="relative py-12 sm:py-16 lg:py-20 overflow-hidden">
+        <section className="relative pt-14 sm:pt-20 pb-12 sm:pb-16 lg:pb-20 overflow-hidden">
+          <p
+            className="pointer-events-none absolute top-[12%] left-1/2 -translate-x-1/2 font-brand text-[clamp(6rem,22vw,14rem)] font-black uppercase tracking-[-0.06em] text-bone/[0.03] select-none whitespace-nowrap"
+            aria-hidden
+          >
+            Apex
+          </p>
           <div className="absolute top-0 right-0 w-[min(480px,70vw)] h-[min(480px,70vw)] rounded-full bg-brand-fire/8 blur-[100px] animate-orb pointer-events-none" aria-hidden />
           <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-burnt/10 blur-[80px] animate-orb pointer-events-none" style={{ animationDelay: "3s" }} aria-hidden />
+          <div className="absolute top-24 left-4 sm:left-8 w-px h-20 sm:h-28 fire-line opacity-50 hidden sm:block" aria-hidden />
 
           <div className="container mx-auto px-4 sm:px-6 relative z-10">
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
