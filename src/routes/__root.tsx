@@ -18,6 +18,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Apex Creator Management",
   url: SITE_URL,
+  logo: `${SITE_URL}/Apex.svg`,
   email: "talent@apexcreatormanagement.com",
 };
 
@@ -99,8 +100,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/1.svg", type: "image/svg+xml" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "icon", href: "/Apex.svg", type: "image/svg+xml" },
+      { rel: "apple-touch-icon", href: "/apex.png" },
       { rel: "canonical", href: SITE_URL },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { ContactForm } from "@/components/ContactForm";
+import { HeroAtmosphere } from "@/components/marketing/HeroAtmosphere";
 import { HeroHighlights } from "@/components/marketing/HeroHighlights";
 import { SiteFooter } from "@/components/marketing/SiteFooter";
 import { SiteHeader } from "@/components/marketing/SiteHeader";
@@ -80,14 +81,15 @@ function Index() {
       <SiteHeader />
 
       <main>
-        {/* Hero — full viewport, asymmetric split */}
-        <section className="relative min-h-[92vh] flex flex-col justify-end pb-12 sm:pb-20 pt-8 overflow-hidden">
-          <div className="absolute top-0 right-0 w-[min(600px,80vw)] h-[min(600px,80vw)] rounded-full bg-brand-fire/10 blur-[100px] animate-orb pointer-events-none" aria-hidden />
-          <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-burnt/10 blur-[80px] animate-orb pointer-events-none" style={{ animationDelay: "3s" }} aria-hidden />
-          <div className="absolute top-1/3 left-8 w-px h-32 fire-line opacity-60 hidden lg:block" aria-hidden />
+        <HeroAtmosphere />
+
+        {/* Hero */}
+        <section className="relative py-12 sm:py-16 lg:py-20 overflow-hidden">
+          <div className="absolute top-0 right-0 w-[min(480px,70vw)] h-[min(480px,70vw)] rounded-full bg-brand-fire/8 blur-[100px] animate-orb pointer-events-none" aria-hidden />
+          <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-burnt/10 blur-[80px] animate-orb pointer-events-none" style={{ animationDelay: "3s" }} aria-hidden />
 
           <div className="container mx-auto px-4 sm:px-6 relative z-10">
-            <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 items-end">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
               <div className="lg:col-span-7 animate-reveal">
                 <p className="section-label mb-6">Boutique talent agency</p>
                 <h1 className="text-[clamp(2.5rem,8vw,5.5rem)] font-black uppercase tracking-[-0.03em] leading-[0.92] mb-6">
@@ -117,7 +119,7 @@ function Index() {
                 </div>
               </div>
 
-              <div className="lg:col-span-5 lg:pb-4">
+              <div className="lg:col-span-5">
                 <HeroHighlights />
               </div>
             </div>
