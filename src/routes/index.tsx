@@ -29,12 +29,10 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { n: "01", t: "Creator Representation", d: "Personalized management and career guidance for lasting brands." },
-  { n: "02", t: "Brand Partnerships", d: "Trusted brands aligned with your audience and values." },
-  { n: "03", t: "Sponsorship Negotiation", d: "Competitive deals from campaigns to ambassador agreements." },
-  { n: "04", t: "Campaign Management", d: "Deliverables, timelines, and partnerships handled end-to-end." },
-  { n: "05", t: "Audience Growth", d: "Data-driven strategies to expand reach and engagement." },
-  { n: "06", t: "Business Development", d: "New revenue streams, launches, and growth initiatives." },
+  { n: "01", t: "Representation", d: "Career strategy, brand positioning, and hands-on deal guidance." },
+  { n: "02", t: "Partnerships", d: "Creators matched with brands their audiences already trust." },
+  { n: "03", t: "Negotiation", d: "Campaign terms, usage, exclusivity, and long-term value protected." },
+  { n: "04", t: "Campaign Ops", d: "Timelines, deliverables, and approvals kept clean from start to finish." },
 ];
 
 const niches = [
@@ -49,149 +47,174 @@ const whyUs = [
 ];
 
 const brandPillars = [
-  { t: "Curated", d: "Vetted roster — not a marketplace." },
+  { t: "Curated", d: "Vetted roster, not a marketplace." },
   { t: "Strategic", d: "Audience fit over follower count." },
   { t: "Accountable", d: "One contact, measurable outcomes." },
 ];
 
-function SectionHeading({ label, title }: { label: string; title: string }) {
-  return (
-    <div className="mb-8">
-      <p className="section-label mb-2">{label}</p>
-      <h2 className="hero-display text-2xl sm:text-3xl text-foreground">{title}</h2>
-    </div>
-  );
-}
+const orbitStats = [
+  { value: "360°", label: "Creator strategy" },
+  { value: "24/7", label: "Partnership support" },
+  { value: "Global", label: "Brand reach" },
+];
 
 function Index() {
   return (
-    <div className="mesh-bg text-foreground min-h-screen">
+    <div className="bg-background text-foreground min-h-screen">
       <SiteHeader />
 
-      <main className="max-w-6xl mx-auto px-5 sm:px-8">
-        {/* Hero */}
-        <section className="page-section pt-8 sm:pt-12">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-            <div>
-              <p className="section-label mb-4">Boutique talent agency</p>
-              <h1 className="hero-display text-[clamp(2.75rem,10vw,5rem)] mb-5">
-                <span className="block text-foreground">Influential</span>
-                <span className="block hero-display-outline">Brands</span>
-              </h1>
-              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-6 max-w-md">
-                We represent creators, influencers, and digital entrepreneurs — building meaningful partnerships and sustainable businesses.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center px-6 py-3 bg-brand-fire text-white text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all"
-                >
-                  Get in touch
-                </a>
-                <a
-                  href="#services"
-                  className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  View services →
-                </a>
+      <main>
+        <section className="relative overflow-hidden p-3 sm:p-5">
+          <div className="apex-stage relative min-h-[calc(100vh-2rem)] overflow-hidden rounded-[2rem] sm:rounded-[3rem]">
+            <div className="absolute inset-0 apex-grid opacity-35" aria-hidden />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/45" aria-hidden />
+
+            <div className="relative z-10 grid min-h-[calc(100vh-2rem)] items-center gap-8 px-5 pb-8 pt-20 sm:px-10 sm:pb-10 sm:pt-24 lg:grid-cols-[1.05fr_0.95fr] lg:px-12">
+              <div className="max-w-4xl">
+                <p className="mb-6 text-xs font-bold uppercase tracking-[0.32em] text-white/70">
+                  Apex Creator Management
+                </p>
+                <h1 className="hero-display text-[clamp(3.6rem,12vw,8.5rem)] text-white">
+                  Creator
+                  <span className="block hero-display-outline">Orbit</span>
+                </h1>
+                <div className="mt-8 grid max-w-2xl gap-6 sm:grid-cols-[1fr_auto] sm:items-end">
+                  <p className="max-w-md text-base leading-relaxed text-white/76 sm:text-lg">
+                    A boutique management engine for creators ready to turn influence into enduring brand equity.
+                  </p>
+                  <a
+                    href="#contact"
+                    className="inline-flex h-14 w-fit items-center gap-4 rounded-full bg-white px-6 text-sm font-bold text-background shadow-[0_18px_40px_rgba(0,0,0,0.22)] transition-transform hover:scale-[1.02]"
+                  >
+                    Get in touch
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-fire text-white">→</span>
+                  </a>
+                </div>
               </div>
+
+              <ApexVisual />
             </div>
-            <ApexVisual />
-          </div>
-        </section>
 
-        {/* Services */}
-        <section id="services" className="page-section section-divider">
-          <SectionHeading label="What we do" title="Full-service management" />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {services.map((s) => (
-              <article key={s.n} className="bento-card rounded-xl p-5 group">
-                <span className="text-xs font-bold text-brand-fire tracking-widest">{s.n}</span>
-                <h3 className="font-bold text-foreground mt-2 mb-2 text-sm uppercase tracking-wide">{s.t}</h3>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{s.d}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        {/* Why Apex — compact strip */}
-        <section className="page-section section-divider">
-          <SectionHeading label="Why Apex" title="Built for creators" />
-          <div className="grid sm:grid-cols-3 gap-6">
-            {whyUs.map((item) => (
-              <div key={item.marker} className="border-l-2 border-brand-fire/40 pl-4">
-                <p className="text-xl font-black text-brand-fire">{item.marker}</p>
-                <h3 className="text-sm font-bold uppercase tracking-wide mt-1 mb-1">{item.t}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{item.d}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Talent + Brands — paired for clearer flow */}
-        <section className="page-section section-divider grid lg:grid-cols-2 gap-10 lg:gap-12">
-          <div id="talent">
-            <SectionHeading label="For creators" title="Representation" />
-            <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-              Actively seeking creators across today's fastest-growing platforms — emerging or established.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {niches.map((n) => (
-                <span
-                  key={n}
-                  className="px-3 py-1.5 text-[0.65rem] font-semibold uppercase tracking-wider border border-border text-muted-foreground"
-                >
-                  {n}
-                </span>
+            <div className="relative z-10 grid border-t border-white/12 bg-black/18 sm:grid-cols-3">
+              {orbitStats.map((item) => (
+                <div key={item.label} className="flex items-end justify-between gap-5 border-b border-white/10 px-5 py-5 last:border-b-0 sm:border-b-0 sm:border-r sm:px-8 sm:last:border-r-0">
+                  <p className="text-2xl font-black text-white">{item.value}</p>
+                  <p className="max-w-28 text-right text-xs font-semibold uppercase tracking-[0.18em] text-white/58">
+                    {item.label}
+                  </p>
+                </div>
               ))}
             </div>
-            <a href="#contact" className="inline-block mt-5 text-xs font-bold uppercase tracking-widest text-brand-fire hover:text-foreground transition-colors">
-              Apply →
-            </a>
           </div>
+        </section>
 
-          <div id="brands">
-            <SectionHeading label="For brands" title="Partnerships" />
-            <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-              Identify, negotiate, and manage creator partnerships aligned with your marketing goals.
-            </p>
-            <ul className="space-y-4">
-              {brandPillars.map((item) => (
-                <li key={item.t} className="flex gap-3 text-sm">
-                  <span className="text-brand-fire font-bold shrink-0">—</span>
-                  <div>
-                    <span className="font-bold uppercase tracking-wide text-foreground">{item.t}</span>
-                    <span className="text-muted-foreground"> · {item.d}</span>
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <section id="services" className="page-section">
+            <div className="mb-10 grid gap-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+              <div>
+                <p className="section-label mb-3">What we do</p>
+                <h2 className="hero-display text-3xl text-white sm:text-5xl">
+                  Management, without the noise.
+                </h2>
+              </div>
+              <p className="max-w-xl text-sm leading-relaxed text-muted-foreground lg:ml-auto">
+                We keep the public-facing brand sharp and the business layer handled: strategy, deal flow, negotiation, and execution.
+              </p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {services.map((s) => (
+                <article key={s.n} className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] p-5 transition-colors hover:border-brand-fire/50">
+                  <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-brand-fire/0 blur-2xl transition-colors group-hover:bg-brand-fire/20" aria-hidden />
+                  <span className="text-xs font-bold tracking-widest text-brand-fire">{s.n}</span>
+                  <h3 className="mt-7 text-sm font-black uppercase tracking-[0.14em] text-white">{s.t}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.d}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="section-divider page-section">
+            <div className="grid gap-4 lg:grid-cols-2">
+              <div id="talent" className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-smoke/40 p-6 sm:p-8">
+                <p className="section-label mb-5">For creators</p>
+                <h2 className="hero-display text-3xl text-white sm:text-4xl">
+                  Build the brand behind the audience.
+                </h2>
+                <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
+                  Representation for creators who want sharper deals, better alignment, and a stronger long-term business.
+                </p>
+                <div className="mt-8 flex flex-wrap gap-2">
+                  {niches.map((n) => (
+                    <span key={n} className="apex-pill rounded-full px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.16em] text-white/62">
+                      {n}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div id="brands" className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] p-6 sm:p-8">
+                <p className="section-label mb-5">For brands</p>
+                <h2 className="hero-display text-3xl text-white sm:text-4xl">
+                  Partnerships that feel native.
+                </h2>
+                <div className="mt-7 space-y-5">
+                  {brandPillars.map((item) => (
+                    <div key={item.t} className="grid grid-cols-[7rem_1fr] gap-4 border-t border-white/10 pt-5">
+                      <h3 className="text-xs font-black uppercase tracking-[0.18em] text-white">{item.t}</h3>
+                      <p className="text-sm leading-relaxed text-muted-foreground">{item.d}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="section-divider page-section">
+            <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+              <div>
+                <p className="section-label mb-3">Why Apex</p>
+                <h2 className="hero-display text-3xl text-white sm:text-5xl">
+                  Less agency. More signal.
+                </h2>
+              </div>
+              <div className="grid gap-3">
+                {whyUs.map((item) => (
+                  <div key={item.marker} className="grid grid-cols-[5rem_1fr] gap-5 rounded-2xl border border-white/10 bg-white/[0.025] p-4">
+                    <p className="text-lg font-black text-brand-fire">{item.marker}</p>
+                    <div>
+                      <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-white">{item.t}</h3>
+                      <p className="mt-1 text-sm text-muted-foreground">{item.d}</p>
+                    </div>
                   </div>
-                </li>
-              ))}
-            </ul>
-            <a href="#contact" className="inline-block mt-5 text-xs font-bold uppercase tracking-widest text-brand-fire hover:text-foreground transition-colors">
-              Partner with us →
-            </a>
-          </div>
-        </section>
+                ))}
+              </div>
+            </div>
+          </section>
 
-        {/* Contact */}
-        <section id="contact" className="page-section section-divider pb-16">
-          <div className="grid lg:grid-cols-2 gap-10 items-start">
-            <div>
-              <SectionHeading label="Contact" title="Start a conversation" />
-              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                We typically respond within 1–2 business days.
-              </p>
-              <a
-                href="mailto:talent@apexcreatormanagement.com"
-                className="text-sm text-foreground hover:text-brand-fire transition-colors break-all"
-              >
-                talent@apexcreatormanagement.com
-              </a>
+          <section id="contact" className="section-divider page-section pb-20">
+            <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-smoke/70 via-background to-background">
+              <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[0.85fr_1.15fr] lg:p-10">
+                <div>
+                  <p className="section-label mb-4">Contact</p>
+                  <h2 className="hero-display text-3xl text-white sm:text-5xl">
+                    Let’s build what comes next.
+                  </h2>
+                  <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
+                    For creator representation, brand collaborations, or general inquiries.
+                  </p>
+                  <a
+                    href="mailto:talent@apexcreatormanagement.com"
+                    className="mt-8 inline-block break-all text-sm text-white transition-colors hover:text-brand-fire"
+                  >
+                    talent@apexcreatormanagement.com
+                  </a>
+                </div>
+                <ContactForm variant="minimal" />
+              </div>
             </div>
-            <div className="bento-card rounded-xl p-6 sm:p-8">
-              <ContactForm variant="minimal" />
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </main>
 
       <SiteFooter />

@@ -1,28 +1,31 @@
 import { ApexLogo } from "./ApexLogo";
 
-const stats = [
-  { value: "360°", label: "Creator-first" },
-  { value: "24/7", label: "Support" },
-  { value: "Global", label: "Reach" },
-];
-
 export function ApexVisual() {
   return (
-    <div className="relative w-full max-w-[320px] mx-auto lg:mx-0 lg:ml-auto">
-      <div className="absolute -inset-8 bg-brand-fire/15 blur-[60px] rounded-full animate-glow-pulse pointer-events-none" aria-hidden />
-      <div className="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none" aria-hidden />
-      <div className="absolute top-0 bottom-0 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-brand-fire/50 via-white/10 to-burnt/30 pointer-events-none" aria-hidden />
-      <div className="absolute left-0 right-0 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" aria-hidden />
+    <div className="relative min-h-[420px] lg:min-h-[560px] w-full">
+      <div className="absolute inset-0 apex-grid opacity-70 [mask-image:radial-gradient(circle_at_center,black,transparent_68%)]" aria-hidden />
+      <div className="absolute left-1/2 top-1/2 h-[min(78vw,34rem)] w-[min(78vw,34rem)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-black/20 blur-sm" aria-hidden />
+      <div className="apex-orb absolute left-1/2 top-1/2 flex h-[min(72vw,31rem)] w-[min(72vw,31rem)] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full">
+        <div className="absolute inset-[9%] rounded-full bg-gradient-to-br from-white/14 via-brand-fire/18 to-black/40 blur-[1px]" aria-hidden />
+        <div className="absolute inset-[18%] rounded-full bg-black/50 shadow-[0_0_90px_rgba(255,1,0,0.22)]" aria-hidden />
+        <ApexLogo size="hero" className="relative z-10 h-[min(36vw,15rem)] drop-shadow-[0_0_50px_rgba(255,255,255,0.18)]" />
+      </div>
 
-      <div className="relative flex flex-col items-center justify-center py-10 px-6">
-        <ApexLogo size="lg" className="relative z-10 drop-shadow-[0_0_32px_rgba(255,1,0,0.25)]" />
-        <div className="mt-8 grid grid-cols-3 gap-3 w-full">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center border-t border-white/10 pt-3">
-              <p className="text-lg font-black text-brand-fire leading-none">{s.value}</p>
-              <p className="text-[0.6rem] uppercase tracking-wider text-muted-foreground mt-1">{s.label}</p>
-            </div>
-          ))}
+      <div className="apex-panel absolute bottom-4 left-4 right-4 rounded-3xl p-5 sm:left-auto sm:right-2 sm:w-72">
+        <p className="text-xs font-bold uppercase tracking-[0.28em] text-brand-fire">Creator signal</p>
+        <p className="mt-3 text-sm leading-relaxed text-white/72">
+          We turn audience trust into brand partnerships that feel natural, measurable, and built to last.
+        </p>
+      </div>
+
+      <div className="absolute left-3 top-8 hidden sm:block">
+        <div className="apex-pill rounded-full px-4 py-2 text-[0.65rem] font-bold uppercase tracking-[0.24em] text-white/70">
+          360 strategy
+        </div>
+      </div>
+      <div className="absolute right-6 top-24 hidden sm:block">
+        <div className="apex-pill rounded-full px-4 py-2 text-[0.65rem] font-bold uppercase tracking-[0.24em] text-white/70">
+          global reach
         </div>
       </div>
     </div>
