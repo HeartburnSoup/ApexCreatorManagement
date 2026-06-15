@@ -28,7 +28,7 @@ const inquiryOptions = [
 ];
 
 const defaultFieldClass =
-  "h-12 rounded-xl border-border/60 bg-smoke/50 px-4 text-base text-bone shadow-none transition-all placeholder:text-muted-foreground focus-visible:border-brand-fire/50 focus-visible:ring-4 focus-visible:ring-brand-fire/10";
+  "h-12 rounded-xl border-border/60 bg-smoke/50 px-4 text-base text-foreground shadow-none transition-all placeholder:text-muted-foreground focus-visible:border-brand-fire/50 focus-visible:ring-4 focus-visible:ring-brand-fire/10";
 
 type ContactFormProps = {
   variant?: "default" | "minimal";
@@ -41,7 +41,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
   const isMinimal = variant === "minimal";
 
   const fieldClass = isMinimal
-    ? "minimal-field h-11 text-base text-bone placeholder:text-muted-foreground/60 focus-visible:ring-0"
+    ? "minimal-field h-11 text-base text-foreground placeholder:text-muted-foreground/60 focus-visible:ring-0"
     : defaultFieldClass;
 
   const labelClass = isMinimal
@@ -108,7 +108,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                 "text-xs font-bold uppercase tracking-[0.2em] transition-colors",
                 form.inquiryType === option.value
                   ? "text-brand-fire"
-                  : "text-muted-foreground hover:text-bone",
+                  : "text-muted-foreground hover:text-foreground",
               )}
             >
               {option.label}
@@ -150,14 +150,14 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
           type="submit"
           disabled={status === "submitting"}
           size="lg"
-          className="mt-2 w-full h-12 rounded-full text-sm font-bold uppercase tracking-wide bg-brand-fire text-bone shadow-lg shadow-brand-fire/25 hover:brightness-105 transition-all"
+          className="mt-2 w-full h-12 rounded-full text-sm font-bold uppercase tracking-wide bg-brand-fire text-white shadow-lg shadow-brand-fire/25 hover:brightness-105 transition-all"
         >
           {status === "submitting" ? "Sending…" : "Send message"}
         </Button>
       )}
 
       {status === "success" && (
-        <p className="text-sm text-bone/80 editorial-caption">
+        <p className="text-sm text-foreground/80 editorial-caption">
           Message sent — we respond within 1–2 business days.
         </p>
       )}
