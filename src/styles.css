@@ -108,6 +108,23 @@
   50% { opacity: 0.85; }
 }
 
+@keyframes aurora-drift {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(4%, -6%, 0) scale(1.08); }
+  66% { transform: translate3d(-5%, 4%, 0) scale(0.96); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes marquee-rtl {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
 .animate-logo-rain {
   animation: logo-rain 7s linear infinite;
   transform-box: fill-box;
@@ -379,6 +396,105 @@
 
 .section-divider {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Aurora hero backdrop */
+.aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.aurora__blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.55;
+  will-change: transform;
+}
+
+.aurora__blob--1 {
+  top: -12%;
+  left: -8%;
+  width: 42rem;
+  height: 42rem;
+  background: radial-gradient(circle at 30% 30%, rgba(56, 189, 248, 0.55), transparent 62%);
+  animation: aurora-drift 18s ease-in-out infinite;
+}
+
+.aurora__blob--2 {
+  bottom: -20%;
+  right: -10%;
+  width: 46rem;
+  height: 46rem;
+  background: radial-gradient(circle at 60% 40%, rgba(37, 99, 235, 0.5), transparent 64%);
+  animation: aurora-drift 22s ease-in-out infinite reverse;
+}
+
+.aurora__blob--3 {
+  top: 20%;
+  right: 24%;
+  width: 28rem;
+  height: 28rem;
+  background: radial-gradient(circle at 50% 50%, rgba(125, 211, 252, 0.32), transparent 66%);
+  animation: aurora-drift 26s ease-in-out infinite;
+}
+
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(14px);
+  transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-3px);
+}
+
+.marquee-rtl-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-rtl 32s linear infinite;
+}
+
+.shimmer-text {
+  background: linear-gradient(100deg, #fff 30%, #38BDF8 50%, #fff 70%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s var(--ease-out-expo);
+}
+
+.accordion-content[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.accordion-content > div {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora__blob,
+  .marquee-rtl-track,
+  .marquee-track,
+  .shimmer-text {
+    animation: none !important;
+  }
 }
 
 @layer base {

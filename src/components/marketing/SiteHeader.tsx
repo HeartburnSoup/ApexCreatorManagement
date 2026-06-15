@@ -5,7 +5,6 @@ import { ApexLogo } from "./ApexLogo";
 
 const navLinks = [
   { href: "/#services", label: "Services" },
-  { href: "/#talent", label: "Talent" },
   { href: "/#brands", label: "Brands" },
   { href: "/#contact", label: "Contact" },
 ];
@@ -23,7 +22,7 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -33,6 +32,12 @@ export function SiteHeader() {
               {link.label}
             </a>
           ))}
+          <a
+            href="/#contact"
+            className="inline-flex h-9 items-center rounded-full bg-brand-fire px-5 text-xs font-bold uppercase tracking-[0.15em] text-background transition-transform hover:scale-[1.03]"
+          >
+            Apply
+          </a>
         </div>
 
         <button
@@ -59,6 +64,13 @@ export function SiteHeader() {
                 {link.label}
               </a>
             ))}
+            <a
+              href="/#contact"
+              className="mt-1 inline-flex h-11 items-center justify-center rounded-full bg-brand-fire px-5 text-xs font-bold uppercase tracking-[0.15em] text-background"
+              onClick={() => setMenuOpen(false)}
+            >
+              Apply
+            </a>
           </div>
         )}
       </nav>
