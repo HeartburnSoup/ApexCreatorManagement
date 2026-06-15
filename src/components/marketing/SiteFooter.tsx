@@ -1,29 +1,68 @@
 import { ApexLogo } from "./ApexLogo";
 
+const columns = [
+  {
+    title: "Discover",
+    links: [
+      { href: "/#services", label: "Services" },
+      { href: "/#niches", label: "Talent" },
+      { href: "/#brands", label: "Brands" },
+    ],
+  },
+  {
+    title: "Connect",
+    links: [
+      { href: "/#contact", label: "Contact" },
+      { href: "mailto:talent@apexcreatormanagement.com", label: "Email" },
+    ],
+  },
+];
+
 export function SiteFooter() {
   return (
-    <footer className="relative border-t border-border bg-smoke/40 py-14 overflow-hidden">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-fire/60 to-transparent" aria-hidden />
-      <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-        <div className="flex items-center gap-4">
-          <ApexLogo size="sm" className="opacity-90" />
+    <footer className="relative border-t border-border/60 bg-background py-16 sm:py-20">
+      <div className="px-5 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-4 mb-6">
+              <ApexLogo size="sm" />
+              <p className="hero-display text-2xl text-bone">Apex</p>
+            </div>
+            <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
+              Boutique creator management for influential brands and meaningful partnerships worldwide.
+            </p>
+          </div>
+
+          {columns.map((col) => (
+            <div key={col.title}>
+              <p className="editorial-caption text-brand-fire mb-5">{col.title}</p>
+              <ul className="space-y-3">
+                {col.links.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="text-sm text-muted-foreground hover:text-bone transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
           <div>
-            <p className="brand-wordmark text-2xl font-bold tracking-[-0.04em]">Apex</p>
-          <p className="text-sm text-muted-foreground mt-1 max-w-xs leading-relaxed">
-            Creator management for influential brands worldwide.
-          </p>
+            <p className="editorial-caption text-brand-fire mb-5">Office</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              talent@apexcreatormanagement.com
+            </p>
           </div>
         </div>
-        <div className="flex flex-wrap gap-8 text-sm font-medium text-muted-foreground">
-          <a href="/#services" className="hover:text-brand-fire transition-colors">Services</a>
-          <a href="/#niches" className="hover:text-brand-fire transition-colors">Talent</a>
-          <a href="/#brands" className="hover:text-brand-fire transition-colors">Brands</a>
-          <a href="/#contact" className="hover:text-brand-fire transition-colors">Contact</a>
+
+        <div className="pt-8 border-t border-border/40 flex flex-col sm:flex-row justify-between gap-3 text-xs editorial-caption text-muted-foreground">
+          <span>© {new Date().getFullYear()} Apex Creator Management</span>
+          <span>Building influential brands</span>
         </div>
-      </div>
-      <div className="container mx-auto px-4 sm:px-6 mt-10 pt-8 border-t border-border/60 text-sm text-muted-foreground flex flex-col sm:flex-row justify-between gap-2">
-        <span>© {new Date().getFullYear()} Apex Creator Management</span>
-        <span className="text-brand-fire/70">Building influential brands.</span>
       </div>
     </footer>
   );
