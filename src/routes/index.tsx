@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { ContactForm } from "@/components/ContactForm";
-import { HeroHighlights } from "@/components/marketing/HeroHighlights";
+import { FaqAccordion } from "@/components/marketing/FaqAccordion";
 import { SiteFooter } from "@/components/marketing/SiteFooter";
 import { SiteHeader } from "@/components/marketing/SiteHeader";
 
@@ -10,16 +10,16 @@ const SITE_URL = "https://apexcreatormanagement.com";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Apex Creator Management — Boutique Talent Agency" },
+      { title: "Apex Creator Management — Talent Agency for Creators" },
       {
         name: "description",
         content:
-          "Boutique talent management agency representing creators, influencers, athletes, and digital entrepreneurs.",
+          "Apex is a boutique creator management agency. We handle brand deals, negotiation, and business strategy so creators can focus on creating.",
       },
       { property: "og:title", content: "Apex Creator Management" },
       {
         property: "og:description",
-        content: "Building influential brands. Creating meaningful partnerships.",
+        content: "You create the culture. We build the business behind it.",
       },
       { property: "og:image", content: `${SITE_URL}/og-image.png` },
       { name: "twitter:image", content: `${SITE_URL}/og-image.png` },
@@ -28,215 +28,331 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const platforms = [
+  "YouTube", "TikTok", "Instagram", "Twitch", "Podcasts",
+  "Newsletters", "X", "Snapchat", "Kick", "Substack",
+];
+
 const services = [
-  { n: "01", t: "Creator Representation", d: "Personalized management and career guidance designed to help creators grow their influence, increase revenue, and build lasting brands." },
-  { n: "02", t: "Brand Partnerships", d: "We connect creators with trusted brands that align with their audience, values, and content style." },
-  { n: "03", t: "Sponsorship Negotiation", d: "From one-time campaigns to long-term ambassador agreements, we negotiate competitive deals while protecting our clients' interests." },
-  { n: "04", t: "Campaign Management", d: "We oversee campaign execution from start to finish, ensuring deliverables are met, timelines stay on track, and partnerships remain successful." },
-  { n: "05", t: "Audience Growth Strategy", d: "Data-driven insights and platform strategies designed to help creators expand their reach and strengthen audience engagement." },
-  { n: "06", t: "Business Development", d: "Beyond content creation, we help creators identify new revenue opportunities, partnerships, product launches, and other growth initiatives." },
+  {
+    n: "01",
+    t: "Brand Deals",
+    d: "We source, pitch, and close partnerships with brands your audience actually respects — no spray-and-pray outreach.",
+  },
+  {
+    n: "02",
+    t: "Negotiation",
+    d: "Usage rights, exclusivity, whitelisting, renewals. We protect your rate and your long-term value on every contract.",
+  },
+  {
+    n: "03",
+    t: "Career Strategy",
+    d: "A roadmap for your brand beyond the next upload — products, equity, IP, and revenue that compounds.",
+  },
+  {
+    n: "04",
+    t: "Campaign Ops",
+    d: "Briefs, timelines, approvals, and invoicing handled end to end so deals never stall in your DMs.",
+  },
+  {
+    n: "05",
+    t: "Audience Growth",
+    d: "Data-driven positioning and format strategy to deepen the audience you already earned.",
+  },
+  {
+    n: "06",
+    t: "Day-to-day Support",
+    d: "A real manager in your corner — responsive, protective, and invested in the long game.",
+  },
 ];
 
-const niches = [
-  "Lifestyle", "Fitness & Wellness", "Fashion", "Beauty", "Travel",
-  "Gaming", "Business & Entrepreneurship", "Technology", "Entertainment",
-];
-
-const whyUs = [
-  { n: "01", t: "Personalized Representation", d: "Every creator is unique. We take a hands-on approach and tailor strategies to your goals." },
-  { n: "02", t: "Trusted Partnerships", d: "We build authentic relationships between creators and brands that create value for both sides." },
-  { n: "03", t: "Long-Term Growth", d: "Our goal isn't just your next sponsorship — we help build sustainable careers and scalable personal brands." },
-  { n: "04", t: "Dedicated Support", d: "From contract review to campaign execution, our team is with you every step of the way." },
+const process = [
+  { n: "01", t: "Apply", d: "Tell us about your channel, your goals, and where you want to be in two years." },
+  { n: "02", t: "Strategy", d: "We build a tailored plan: positioning, rate card, and the brands worth chasing." },
+  { n: "03", t: "We pitch & close", d: "Deals land in your inbox already negotiated, vetted, and ready to sign." },
+  { n: "04", t: "You scale", d: "You create. We compound the business, partnership by partnership." },
 ];
 
 const stats = [
-  { value: "360°", label: "Creator-first strategy" },
-  { value: "24/7", label: "Partnership support" },
-  { value: "Global", label: "Brand reach" },
+  { value: "100%", label: "Creator-first representation" },
+  { value: "24/7", label: "Manager in your corner" },
+  { value: "0", label: "Lowball deals accepted" },
 ];
 
-function Index() {
+const brandPillars = [
+  { t: "Curated roster", d: "A vetted group of creators — not an open marketplace." },
+  { t: "Audience fit", d: "Matched on resonance and trust, never just follower count." },
+  { t: "One point of contact", d: "Clear comms, clean execution, measurable outcomes." },
+];
+
+const faqs = [
+  {
+    q: "What size creator do you work with?",
+    a: "We're boutique by design. We partner with a small roster of creators who have an engaged audience and a real ambition to build a lasting business — across any platform or niche.",
+  },
+  {
+    q: "How does Apex make money?",
+    a: "We earn a commission on the partnerships we bring in and manage. When you win, we win. There are no upfront fees to be represented.",
+  },
+  {
+    q: "Do I have to be on one specific platform?",
+    a: "No. We represent creators across YouTube, TikTok, Instagram, Twitch, podcasts, newsletters, and more. What matters is the relationship you have with your audience.",
+  },
+  {
+    q: "What happens after I apply?",
+    a: "We review every application personally. If it's a fit, we'll set up a call to talk through your goals and how we'd build your strategy before anything is signed.",
+  },
+];
+
+function EyebrowDot({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mesh-bg text-foreground min-h-screen overflow-x-hidden">
+    <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.32em] text-brand-fire">
+      <span className="h-1.5 w-1.5 rounded-full bg-brand-fire" aria-hidden />
+      {children}
+    </span>
+  );
+}
+
+function Index() {
+  const marqueeItems = [...platforms, ...platforms];
+
+  return (
+    <div className="bg-background text-foreground min-h-screen">
       <SiteHeader />
 
       <main>
         {/* Hero */}
-        <section className="relative min-h-0 sm:min-h-[88vh] flex items-center py-14 sm:py-24 overflow-hidden">
-          <div className="absolute top-16 right-[5%] w-48 sm:w-72 h-48 sm:h-72 rounded-full bg-brand-cyan/10 blur-3xl animate-orb" aria-hidden />
-          <div className="absolute bottom-10 left-[5%] w-64 sm:w-96 h-64 sm:h-96 rounded-full bg-primary/5 blur-3xl animate-orb" style={{ animationDelay: "2s" }} aria-hidden />
-
-          <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
-            <div className="animate-reveal max-w-2xl">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.06] mb-4 sm:mb-6 pr-1">
-                Building Influential{" "}
-                <span className="text-gradient italic pr-2">Brands</span>
-                <span className="text-foreground">.</span>
-              </h1>
-              <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-muted-foreground mb-5 sm:mb-6 text-balance">
-                Creating Meaningful Partnerships.
-              </p>
-              <p className="text-base sm:text-lg text-muted-foreground max-w-xl mb-4 text-pretty leading-relaxed">
-                Apex represents creators, influencers, athletes, and digital entrepreneurs, transforming online presence into sustainable businesses.
-              </p>
-              <p className="text-sm sm:text-base text-muted-foreground/90 max-w-xl mb-8 sm:mb-10 italic text-pretty leading-relaxed">
-                Our mission is simple: empower creators to focus on creating while we handle the business behind the brand.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <a
-                  href="#contact"
-                  className="inline-flex justify-center px-8 py-4 min-h-[48px] bg-primary text-primary-foreground text-sm sm:text-base font-bold uppercase tracking-wide rounded-full hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-lg shadow-primary/15 hover:shadow-brand-cyan/20"
-                >
-                  Get in touch
-                </a>
-                <a
-                  href="#services"
-                  className="inline-flex justify-center px-8 py-4 min-h-[48px] border border-border bg-card/60 text-sm sm:text-base font-semibold uppercase tracking-wide rounded-full hover:border-brand-cyan/40 hover:text-foreground transition-colors"
-                >
-                  Our services
-                </a>
-              </div>
-            </div>
-
-            <HeroHighlights />
+        <section className="relative overflow-hidden px-5 pb-20 pt-28 sm:px-8 sm:pb-28 sm:pt-36">
+          <div className="aurora" aria-hidden>
+            <div className="aurora__blob aurora__blob--1" />
+            <div className="aurora__blob aurora__blob--2" />
+            <div className="aurora__blob aurora__blob--3" />
           </div>
-        </section>
+          <div className="absolute inset-0 dot-grid opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" aria-hidden />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" aria-hidden />
 
-        {/* Stats strip — compact bar below hero */}
-        <section className="border-y border-border bg-card/80 backdrop-blur-sm">
-          <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 grid grid-cols-3 gap-4 sm:gap-8">
-            {stats.map((s) => (
-              <div key={s.label} className="text-center">
-                <p className="text-2xl sm:text-4xl font-black text-brand-cyan">{s.value}</p>
-                <p className="text-xs sm:text-base text-muted-foreground mt-1 font-medium">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Services */}
-        <section id="services" className="py-16 sm:py-24 lg:py-32">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="max-w-2xl mb-10 sm:mb-16">
-              <p className="text-sm font-bold uppercase tracking-widest text-brand-cyan mb-3">What we do</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-balance">Full-service creator management</h2>
+          <div className="relative z-10 mx-auto max-w-5xl text-center">
+            <div className="animate-reveal">
+              <EyebrowDot>Boutique creator management</EyebrowDot>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((s, i) => (
-                <article
-                  key={s.n}
-                  className="group glass rounded-2xl p-6 sm:p-8 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300 animate-reveal"
-                  style={{ animationDelay: `${i * 80}ms` }}
-                >
-                  <span className="inline-flex w-12 h-12 items-center justify-center rounded-xl bg-primary/10 text-primary font-bold text-lg mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    {s.n}
-                  </span>
-                  <h3 className="text-xl font-bold mb-3">{s.t}</h3>
-                  <p className="text-base text-muted-foreground leading-relaxed">{s.d}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Niches */}
-        <section id="niches" className="py-16 sm:py-24 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, #02EFF0 1px, transparent 0)", backgroundSize: "32px 32px" }} aria-hidden />
-          <div className="container mx-auto px-4 sm:px-6 relative z-10">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight mb-4 max-w-3xl text-balance">
-              Looking for Representation?
-            </h2>
-            <p className="text-lg sm:text-xl text-primary-foreground/75 max-w-2xl mb-10 text-pretty leading-relaxed">
-              We are actively seeking creators across today's fastest-growing platforms. Whether you're emerging or established, we'd love to learn more about your brand and vision.
+            <h1 className="hero-display mt-7 text-[clamp(2.8rem,9vw,6.5rem)] text-white animate-reveal [animation-delay:60ms]">
+              You create the culture.
+              <span className="mt-2 block shimmer-text">We build the business.</span>
+            </h1>
+            <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg animate-reveal [animation-delay:120ms]">
+              Apex is the management team behind ambitious creators. We chase the brand deals, win the
+              negotiations, and run the business — so you can stay focused on the work only you can make.
             </p>
-            <div className="flex flex-wrap gap-3">
-              {niches.map((n) => (
+            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row animate-reveal [animation-delay:180ms]">
+              <a
+                href="#contact"
+                className="group inline-flex h-14 w-full items-center justify-center gap-3 rounded-full bg-brand-fire px-8 text-sm font-bold uppercase tracking-wider text-background transition-transform hover:scale-[1.02] sm:w-auto"
+              >
+                Apply as a creator
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </a>
+              <a
+                href="#brands"
+                className="inline-flex h-14 w-full items-center justify-center rounded-full border border-white/15 px-8 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:border-white/40 sm:w-auto"
+              >
+                Partner as a brand
+              </a>
+            </div>
+            <p className="mt-6 text-xs uppercase tracking-[0.2em] text-muted-foreground animate-reveal [animation-delay:240ms]">
+              Representation across every major platform
+            </p>
+          </div>
+        </section>
+
+        {/* Platform marquee */}
+        <section className="relative border-y border-white/10 py-6">
+          <div className="marquee-mask overflow-hidden">
+            <div className="marquee-rtl-track gap-10 pr-10">
+              {marqueeItems.map((p, i) => (
                 <span
-                  key={n}
-                  className="px-5 py-2.5 rounded-full border border-brand-cyan/30 bg-brand-cyan/10 text-sm font-semibold uppercase tracking-wide backdrop-blur-sm text-brand-cyan"
+                  key={`${p}-${i}`}
+                  className="flex shrink-0 items-center gap-10 text-2xl font-black uppercase tracking-tight text-white/25 sm:text-3xl"
                 >
-                  {n}
+                  {p}
+                  <span className="text-brand-fire/40" aria-hidden>✦</span>
                 </span>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Why Apex */}
-        <section className="py-16 sm:py-24 lg:py-32">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
-              <p className="text-sm font-bold uppercase tracking-widest text-primary mb-3">Why Apex</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-balance">Built for creators who want more</h2>
+        {/* Manifesto */}
+        <section className="px-5 sm:px-8">
+          <div className="mx-auto max-w-5xl page-section">
+            <div className="max-w-3xl">
+              <p className="text-2xl font-medium leading-snug text-white sm:text-4xl">
+                Your audience is the hardest thing to build — and the easiest thing to undervalue.
+                <span className="text-muted-foreground"> Apex makes sure every partnership treats it like the asset it is.</span>
+              </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {whyUs.map((w, i) => (
-                <div key={w.n} className="text-center p-6 animate-reveal" style={{ animationDelay: `${i * 100}ms` }}>
-                  <div className="text-5xl font-black text-primary/30 mb-4">{w.n}</div>
-                  <h3 className="text-lg font-bold mb-3">{w.t}</h3>
-                  <p className="text-base text-muted-foreground leading-relaxed">{w.d}</p>
+          </div>
+        </section>
+
+        {/* Services */}
+        <section id="services" className="px-5 sm:px-8">
+          <div className="mx-auto max-w-6xl page-section section-divider">
+            <div className="mb-12 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <EyebrowDot>What we handle</EyebrowDot>
+                <h2 className="hero-display mt-4 text-3xl text-white sm:text-5xl">
+                  Everything but the camera.
+                </h2>
+              </div>
+              <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
+                You stay the talent and the creative. We become the team that turns attention into a
+                durable, well-run business.
+              </p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {services.map((s) => (
+                <article
+                  key={s.n}
+                  className="glass-card group relative overflow-hidden rounded-3xl p-6"
+                >
+                  <div className="flex items-baseline justify-between">
+                    <span className="text-xs font-bold tracking-[0.2em] text-brand-fire">{s.n}</span>
+                    <span className="text-xs uppercase tracking-[0.2em] text-white/20">Apex</span>
+                  </div>
+                  <h3 className="mt-8 text-lg font-bold text-white">{s.t}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.d}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Process */}
+        <section className="px-5 sm:px-8">
+          <div className="mx-auto max-w-6xl page-section section-divider">
+            <div className="mb-12 text-center">
+              <EyebrowDot>How it works</EyebrowDot>
+              <h2 className="hero-display mx-auto mt-4 max-w-2xl text-3xl text-white sm:text-5xl">
+                Simple to start. Built to compound.
+              </h2>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {process.map((step, i) => (
+                <div key={step.n} className="relative rounded-3xl border border-white/10 bg-white/[0.02] p-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-brand-fire/30 bg-brand-fire/10 text-sm font-black text-brand-fire">
+                    {step.n}
+                  </div>
+                  <h3 className="mt-6 text-lg font-bold text-white">{step.t}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.d}</p>
+                  {i < process.length - 1 && (
+                    <span className="absolute right-6 top-7 hidden text-white/15 lg:block" aria-hidden>→</span>
+                  )}
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Brands */}
-        <section id="brands" className="py-16 sm:py-24 lg:py-32 bg-card border-y border-border">
-          <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div>
-              <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">For Brands</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight leading-tight mb-6 sm:mb-8 text-balance">
-                Partner with creators who <span className="text-primary italic">move</span> audiences.
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8 text-pretty leading-relaxed">
-                Looking to collaborate with creators who drive engagement and deliver results? We help brands identify, negotiate, and manage partnerships aligned with your marketing goals.
-              </p>
-              <a
-                href="#contact"
-                className="inline-flex justify-center w-full sm:w-auto px-8 py-4 min-h-[48px] bg-brand-cyan text-primary text-sm sm:text-base font-bold uppercase tracking-wide rounded-full hover:brightness-105 hover:shadow-[0_0_24px_rgba(2,239,240,0.35)] transition-all"
-              >
-                Start a partnership →
-              </a>
-            </div>
-            <div className="grid gap-4">
-              {[
-                { n: "01", t: "Curated", d: "A vetted roster — not a marketplace." },
-                { n: "02", t: "Strategic", d: "Briefs matched to audience fit, not follower count." },
-                { n: "03", t: "Accountable", d: "Single point of contact, measurable outcomes." },
-              ].map((item) => (
-                <div key={item.n} className="flex gap-5 p-6 rounded-2xl border border-border bg-background hover:border-primary/40 transition-colors">
-                  <span className="text-2xl font-black text-primary">{item.n}</span>
-                  <div>
-                    <h3 className="text-lg font-bold">{item.t}</h3>
-                    <p className="text-base text-muted-foreground mt-1">{item.d}</p>
-                  </div>
+        {/* Stats */}
+        <section className="px-5 sm:px-8">
+          <div className="mx-auto max-w-6xl page-section section-divider">
+            <div className="grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 sm:grid-cols-3">
+              {stats.map((s) => (
+                <div key={s.label} className="bg-background px-8 py-12 text-center">
+                  <p className="hero-display text-5xl text-white sm:text-6xl">{s.value}</p>
+                  <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                    {s.label}
+                  </p>
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Testimonial */}
+        <section className="px-5 sm:px-8">
+          <div className="mx-auto max-w-5xl page-section section-divider text-center">
+            <p className="text-3xl font-medium leading-snug text-white sm:text-5xl sm:leading-tight">
+              “The best managers make themselves invisible. You feel them in the deals you close and the
+              chaos you <span className="text-brand-fire">never</span> have to deal with again.”
+            </p>
+            <p className="mt-8 text-xs font-bold uppercase tracking-[0.24em] text-muted-foreground">
+              The Apex approach
+            </p>
+          </div>
+        </section>
+
+        {/* For brands */}
+        <section id="brands" className="px-5 sm:px-8">
+          <div className="mx-auto max-w-6xl page-section section-divider">
+            <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-smoke/60 via-background to-background">
+              <div className="grid gap-10 p-8 sm:p-10 lg:grid-cols-2 lg:p-14">
+                <div>
+                  <EyebrowDot>For brands</EyebrowDot>
+                  <h2 className="hero-display mt-4 text-3xl text-white sm:text-5xl">
+                    Partnerships that feel native.
+                  </h2>
+                  <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    Work with creators whose audiences actually convert. We help you identify the right
+                    fit, negotiate cleanly, and run campaigns that perform.
+                  </p>
+                  <a
+                    href="#contact"
+                    className="mt-8 inline-flex items-center gap-3 text-sm font-bold uppercase tracking-wider text-brand-fire transition-colors hover:text-white"
+                  >
+                    Start a partnership
+                    <span aria-hidden>→</span>
+                  </a>
+                </div>
+                <div className="grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
+                  {brandPillars.map((item) => (
+                    <div key={item.t} className="bg-background p-6">
+                      <h3 className="text-sm font-black uppercase tracking-[0.14em] text-white">{item.t}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.d}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="px-5 sm:px-8">
+          <div className="mx-auto max-w-3xl page-section section-divider">
+            <div className="mb-10 text-center">
+              <EyebrowDot>Questions</EyebrowDot>
+              <h2 className="hero-display mt-4 text-3xl text-white sm:text-5xl">
+                Good to know.
+              </h2>
+            </div>
+            <FaqAccordion items={faqs} />
           </div>
         </section>
 
         {/* Contact */}
-        <section id="contact" className="py-16 sm:py-24 lg:py-32">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start max-w-6xl mx-auto">
+        <section id="contact" className="px-5 sm:px-8">
+          <div className="mx-auto max-w-6xl page-section section-divider pb-24">
+            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
               <div>
-                <h2 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold uppercase tracking-tight mb-4 sm:mb-6 leading-tight text-balance">
-                  Ready to elevate your brand?
+                <EyebrowDot>Apply / Contact</EyebrowDot>
+                <h2 className="hero-display mt-4 text-3xl text-white sm:text-5xl">
+                  Let's build what comes next.
                 </h2>
-                <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 text-pretty leading-relaxed">
-                  For creator representation, partnership opportunities, or brand collaborations, send us a message. We typically respond within 1–2 business days.
+                <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  Whether you're a creator ready for real representation or a brand looking for the right
+                  fit — tell us where you want to go. We read every message.
                 </p>
-                <p className="text-base sm:text-lg font-medium">
-                  <span className="text-primary font-bold">Email</span>{" "}
-                  <a href="mailto:talent@apexcreatormanagement.com" className="hover:text-primary transition-colors break-all">
-                    talent@apexcreatormanagement.com
-                  </a>
-                </p>
+                <a
+                  href="mailto:talent@apexcreatormanagement.com"
+                  className="mt-8 inline-block break-all text-sm text-white transition-colors hover:text-brand-fire"
+                >
+                  talent@apexcreatormanagement.com
+                </a>
               </div>
-              <div className="glass rounded-3xl p-6 sm:p-8 shadow-xl">
-                <ContactForm />
+              <div className="glass-card rounded-3xl p-6 sm:p-8">
+                <ContactForm variant="minimal" />
               </div>
             </div>
           </div>

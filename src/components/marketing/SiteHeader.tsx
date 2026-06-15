@@ -3,8 +3,8 @@ import { useState } from "react";
 
 import { ApexLogo } from "./ApexLogo";
 
-const navLinks = [  { href: "/#services", label: "Services" },
-  { href: "/#niches", label: "Talent" },
+const navLinks = [
+  { href: "/#services", label: "Services" },
   { href: "/#brands", label: "Brands" },
   { href: "/#contact", label: "Contact" },
 ];
@@ -13,58 +13,52 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 glass border-b border-border/80">
-      <nav className="container mx-auto relative flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4">
-        <Link to="/" className="group flex items-center gap-3 shrink-0">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+      <nav className="relative max-w-6xl mx-auto flex items-center justify-between px-5 sm:px-8 py-3.5">
+        <Link to="/" className="flex items-center gap-2.5 shrink-0">
           <ApexLogo size="sm" />
-          <span className="hidden sm:flex flex-col gap-1">
-            <span className="brand-wordmark text-xl font-bold leading-none tracking-[-0.04em]">
-              Apex
-            </span>
-            <span className="text-[0.6rem] font-semibold uppercase tracking-[0.28em] text-muted-foreground group-hover:text-foreground transition-colors">
-              Creator Management
-            </span>
+          <span className="hidden sm:block text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            Apex
           </span>
         </Link>
-        <div className="hidden lg:flex gap-10 text-sm font-medium text-muted-foreground">
+
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="relative py-1 hover:text-foreground transition-colors after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-0 after:rounded-full after:bg-brand-cyan after:transition-all hover:after:w-full"
+              className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors"
             >
               {link.label}
             </a>
           ))}
-        </div>
-
-        <div className="flex items-center gap-3">
           <a
             href="/#contact"
-            className="hidden sm:inline-flex px-5 py-2.5 bg-brand-cyan text-primary text-sm font-bold uppercase tracking-wide rounded-full hover:brightness-105 hover:shadow-[0_0_24px_rgba(2,239,240,0.35)] transition-all"
+            className="inline-flex h-9 items-center rounded-full bg-brand-fire px-5 text-xs font-bold uppercase tracking-[0.15em] text-background transition-transform hover:scale-[1.03]"
           >
-            Inquiry
+            Apply
           </a>
-          <button
-            type="button"
-            className="lg:hidden flex flex-col justify-center gap-1.5 w-10 h-10"
-            aria-expanded={menuOpen}
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            <span className={`block h-0.5 w-6 bg-foreground transition-transform ${menuOpen ? "translate-y-[7px] rotate-45" : ""}`} />
-            <span className={`block h-0.5 w-6 bg-foreground transition-opacity ${menuOpen ? "opacity-0" : ""}`} />
-            <span className={`block h-0.5 w-6 bg-foreground transition-transform ${menuOpen ? "-translate-y-[7px] -rotate-45" : ""}`} />
-          </button>
         </div>
 
+        <button
+          type="button"
+          className="md:hidden flex flex-col justify-center gap-1.5 w-9 h-9"
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span className={`block h-px w-5 bg-foreground transition-transform ${menuOpen ? "translate-y-[5px] rotate-45" : ""}`} />
+          <span className={`block h-px w-5 bg-foreground transition-opacity ${menuOpen ? "opacity-0" : ""}`} />
+          <span className={`block h-px w-5 bg-foreground transition-transform ${menuOpen ? "-translate-y-[5px] -rotate-45" : ""}`} />
+        </button>
+
         {menuOpen && (
-          <div className="absolute top-full left-0 right-0 lg:hidden glass border-b border-border px-4 sm:px-6 py-5 flex flex-col gap-4">
+          <div className="absolute top-full left-0 right-0 md:hidden bg-background border-b border-border px-5 py-4 flex flex-col gap-3">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-base font-medium text-muted-foreground hover:text-foreground py-1 min-h-[44px] flex items-center"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground py-2"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
@@ -72,10 +66,10 @@ export function SiteHeader() {
             ))}
             <a
               href="/#contact"
-              className="inline-flex justify-center items-center min-h-[48px] px-5 py-3 bg-brand-cyan text-primary text-sm font-bold uppercase tracking-wide rounded-full"
+              className="mt-1 inline-flex h-11 items-center justify-center rounded-full bg-brand-fire px-5 text-xs font-bold uppercase tracking-[0.15em] text-background"
               onClick={() => setMenuOpen(false)}
             >
-              Inquiry
+              Apply
             </a>
           </div>
         )}

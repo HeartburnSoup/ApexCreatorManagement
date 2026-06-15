@@ -1,21 +1,44 @@
+import { ApexLogo } from "./ApexLogo";
+
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border bg-card/50 py-12">
-      <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-        <div>
-          <p className="brand-wordmark text-2xl font-bold tracking-[-0.04em]">Apex</p>
-          <p className="text-sm text-muted-foreground mt-2 max-w-xs">
-            Creator management for influential brands worldwide.
+    <footer className="border-t border-border bg-smoke/20">
+      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-sm">
+            <div className="flex items-center gap-3">
+              <ApexLogo size="sm" />
+              <span className="text-sm font-semibold uppercase tracking-[0.2em] text-foreground">
+                Apex
+              </span>
+            </div>
+            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+              You create the culture. We build the business behind it.
+            </p>
+            <a
+              href="mailto:talent@apexcreatormanagement.com"
+              className="mt-5 inline-block break-all text-sm text-foreground transition-colors hover:text-brand-fire"
+            >
+              talent@apexcreatormanagement.com
+            </a>
+          </div>
+
+          <nav className="flex flex-wrap gap-x-8 gap-y-3 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground">
+            <a href="/#services" className="hover:text-foreground transition-colors">Services</a>
+            <a href="/#brands" className="hover:text-foreground transition-colors">Brands</a>
+            <a href="/#contact" className="hover:text-foreground transition-colors">Apply</a>
+            <a href="/#contact" className="hover:text-foreground transition-colors">Contact</a>
+          </nav>
+        </div>
+
+        <div className="mt-12 flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs text-muted-foreground">
+            © {new Date().getFullYear()} Apex Creator Management. All rights reserved.
+          </p>
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            Boutique creator management
           </p>
         </div>
-        <div className="flex flex-wrap gap-6 text-sm font-medium text-muted-foreground">
-          <a href="/#contact" className="hover:text-brand-cyan transition-colors">
-            Contact
-          </a>
-        </div>
-      </div>
-      <div className="container mx-auto px-4 sm:px-6 mt-8 pt-8 border-t border-border text-sm text-muted-foreground">
-        © {new Date().getFullYear()} Apex Creator Management. All rights reserved.
       </div>
     </footer>
   );
