@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "You create the culture. We build the business behind it.",
       },
-      { property: "og:image", content: `${SITE_URL}/og-image.png?v=2` },
+      { property: "og:image", content: `${SITE_URL}/og-image.png?v=3` },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       {
@@ -34,7 +34,7 @@ export const Route = createFileRoute("/")({
         name: "twitter:description",
         content: "You create the culture. We build the business behind it.",
       },
-      { name: "twitter:image", content: `${SITE_URL}/og-image.png?v=2` },
+      { name: "twitter:image", content: `${SITE_URL}/og-image.png?v=3` },
     ],
   }),
   component: Index,

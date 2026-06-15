@@ -18,7 +18,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Apex Creator Management",
   url: SITE_URL,
-  logo: `${SITE_URL}/Apex.svg`,
+  logo: `${SITE_URL}/og-image.png`,
   email: "talent@apexcreatormanagement.com",
 };
 
@@ -98,7 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },
       { property: "og:site_name", content: "Apex Creator Management" },
-      { property: "og:image", content: `${SITE_URL}/og-image.png?v=2` },
+      { property: "og:image", content: `${SITE_URL}/og-image.png?v=3` },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       {
@@ -111,12 +111,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "twitter:description",
         content: "You create the culture. We build the business behind it.",
       },
-      { name: "twitter:image", content: `${SITE_URL}/og-image.png?v=2` },
+      { name: "twitter:image", content: `${SITE_URL}/og-image.png?v=3` },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/Apex.svg", type: "image/svg+xml" },
-      { rel: "apple-touch-icon", href: "/apex.png" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "apple-touch-icon", href: "/favicon.svg" },
       { rel: "canonical", href: SITE_URL },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },

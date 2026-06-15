@@ -6,12 +6,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-sm">
-            <div className="flex items-center gap-3">
-              <ApexLogo size="sm" />
-              <span className="text-sm font-semibold uppercase tracking-[0.2em] text-foreground">
-                Apex
-              </span>
-            </div>
+            <ApexLogo size="sm" subline="Creator Management" />
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
               You create the culture. We build the business behind it.
             </p>

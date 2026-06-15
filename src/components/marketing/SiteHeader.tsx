@@ -15,11 +15,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <nav className="relative max-w-6xl mx-auto flex items-center justify-between px-5 sm:px-8 py-3.5">
-        <Link to="/" className="flex items-center gap-2.5 shrink-0">
+        <Link to="/" className="group shrink-0 transition-opacity hover:opacity-90">
           <ApexLogo size="sm" />
-          <span className="hidden sm:block text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-            Apex
-          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
