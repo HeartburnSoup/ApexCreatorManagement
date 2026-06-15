@@ -6,21 +6,21 @@
     </linearGradient>
     <linearGradient id="brandGrad" x1="0" y1="1" x2="1" y2="0">
       <stop offset="0%" stop-color="#F0EDCC"/>
-      <stop offset="45%" stop-color="#921B1D"/>
-      <stop offset="100%" stop-color="#FF0100"/>
+      <stop offset="45%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
     </linearGradient>
     <radialGradient id="accentGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FF0100" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#FF0100" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
     </radialGradient>
     <filter id="logoGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#FF0100" flood-opacity="0.35"/>
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#38BDF8" flood-opacity="0.35"/>
     </filter>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
   <circle cx="980" cy="120" r="220" fill="url(#accentGlow)"/>
   <circle cx="180" cy="520" r="180" fill="url(#accentGlow)"/>
-  <rect x="0" y="0" width="1200" height="4" fill="#FF0100"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#38BDF8"/>
 
   <g transform="translate(88, 118) scale(0.62)" filter="url(#logoGlow)">
     <path fill="#F0EDCC" d="M352.09,355.65l-72.15,100.17-139.74,198.97c-6.34,9.03-12.34,17.94-21.45,23.56l-17.32,10.68c-22.44,10.64-48.18,7.34-65.7-9.9-17.31-18.65-20.48-44.62-10.16-68.11l115.11-201.62,10-17.98,25.06-44.01,71.1-126.73,37.43-66.41c-.95-2.37-.28-4.09,2.38-4.84l64.98-116.72c5.15-9.25,10.67-16.98,18.83-23.3,16.72-12.95,38.68-12.4,54.95,1.04,7.2,5.95,12.05,12.9,16.8,21.45l135.36,243.3,122.19,220.82,58.45,103.47c8.18,14.48,13.48,29.1,11.45,45.81-2.03,16.69-10.34,31.36-23.22,40.19-14.36,9.83-32.33,13.08-49.12,7.15-17.09-6.03-33.47-16.99-44.03-31.9l-80.14-113.16-129.09-182.59c-6.52-9.22-13.24-16.77-22.46-22.81-16.34-10.69-36.53-11.4-53.05-.73-6.03,3.9-11.79,7.73-16.47,14.23Z"/>
@@ -33,5 +33,5 @@
   <text x="560" y="310" font-family="Inter, system-ui, sans-serif" font-size="36" font-weight="700" fill="#F0EDCC" letter-spacing="-0.5">Creator Management</text>
   <text x="560" y="390" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="500" fill="#F0EDCC">Building influential brands.</text>
   <text x="560" y="432" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="500" fill="#a39e8a">Creating meaningful partnerships.</text>
-  <rect x="560" y="468" width="120" height="4" rx="2" fill="#FF0100"/>
+  <rect x="560" y="468" width="120" height="4" rx="2" fill="#38BDF8"/>
 </svg>

@@ -7,7 +7,7 @@ export function ApexVisual() {
       <div className="absolute left-1/2 top-1/2 h-[min(78vw,34rem)] w-[min(78vw,34rem)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-black/20 blur-sm" aria-hidden />
       <div className="apex-orb absolute left-1/2 top-1/2 flex h-[min(72vw,31rem)] w-[min(72vw,31rem)] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full">
         <div className="absolute inset-[9%] rounded-full bg-gradient-to-br from-white/14 via-brand-fire/18 to-black/40 blur-[1px]" aria-hidden />
-        <div className="absolute inset-[18%] rounded-full bg-black/50 shadow-[0_0_90px_rgba(255,1,0,0.22)]" aria-hidden />
+        <div className="absolute inset-[18%] rounded-full bg-black/50 shadow-[0_0_90px_rgba(56,189,248,0.22)]" aria-hidden />
         <ApexLogo size="hero" className="relative z-10 h-[min(36vw,15rem)] drop-shadow-[0_0_50px_rgba(255,255,255,0.18)]" />
       </div>
 
