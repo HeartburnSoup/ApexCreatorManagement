@@ -8,7 +8,7 @@ export function SiteFooter() {
           <div className="max-w-sm">
             <ApexLogo size="sm" subline="Creator Management" />
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              You create the culture. We build the business behind it.
+              Creator management for influential brands worldwide.
             </p>
             <a
               href="mailto:talent@apexcreatormanagement.com"

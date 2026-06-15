@@ -84,34 +84,35 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Apex Creator Management — Talent Agency for Creators" },
+      { title: "Apex Creator Management — Boutique Talent Agency" },
       {
         name: "description",
-        content: "Apex is a boutique creator management agency. We handle brand deals, negotiation, and business strategy so creators can focus on creating.",
+        content:
+          "Boutique talent management agency representing creators, influencers, athletes, and digital entrepreneurs.",
       },
       { name: "author", content: "Apex Creator Management" },
       { property: "og:title", content: "Apex Creator Management" },
       {
         property: "og:description",
-        content: "You create the culture. We build the business behind it.",
+        content: "Building influential brands. Creating meaningful partnerships.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },
       { property: "og:site_name", content: "Apex Creator Management" },
-      { property: "og:image", content: `${SITE_URL}/og-image.png?v=3` },
+      { property: "og:image", content: `${SITE_URL}/og-image.png?v=4` },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       {
         property: "og:image:alt",
-        content: "Apex Creator Management — You create the culture. We build the business.",
+        content: "Apex Creator Management — Building influential brands. Creating meaningful partnerships.",
       },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Apex Creator Management" },
       {
         name: "twitter:description",
-        content: "You create the culture. We build the business behind it.",
+        content: "Building influential brands. Creating meaningful partnerships.",
       },
-      { name: "twitter:image", content: `${SITE_URL}/og-image.png?v=3` },
+      { name: "twitter:image", content: `${SITE_URL}/og-image.png?v=4` },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
