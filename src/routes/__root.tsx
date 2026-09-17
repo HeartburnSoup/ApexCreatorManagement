@@ -139,6 +139,12 @@ function RootShell({ children }: { children: ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        <script
+          defer
+          src="https://www.localseopilot.com/track.js"
+          data-business-id="7b16bcff-aba8-4908-b8a4-4233157c48e8"
+          data-api="https://www.localseopilot.com"
+        />
       </head>
       <body>
         {children}
