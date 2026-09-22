@@ -8,7 +8,8 @@ export function SiteFooter() {
           <div className="max-w-sm">
             <ApexLogo size="sm" subline="Creator Management" />
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              Creator management for influential brands worldwide.
+              Creator representation, websites, and Google visibility — so brands can find you
+              and book partnerships.
             </p>
             <a
               href="mailto:talent@apexcreatormanagement.com"
@@ -19,10 +20,18 @@ export function SiteFooter() {
           </div>
 
           <nav className="flex flex-wrap gap-x-8 gap-y-3 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground">
-            <a href="/#services" className="hover:text-foreground transition-colors">Services</a>
-            <a href="/#brands" className="hover:text-foreground transition-colors">Brands</a>
-            <a href="/#contact" className="hover:text-foreground transition-colors">Apply</a>
-            <a href="/#contact" className="hover:text-foreground transition-colors">Contact</a>
+            <a href="/#services" className="hover:text-foreground transition-colors">
+              Services
+            </a>
+            <a href="/#visibility" className="hover:text-foreground transition-colors">
+              Visibility
+            </a>
+            <a href="/#brands" className="hover:text-foreground transition-colors">
+              Brands
+            </a>
+            <a href="/#contact" className="hover:text-foreground transition-colors">
+              Apply
+            </a>
           </nav>
         </div>
 
@@ -31,7 +40,7 @@ export function SiteFooter() {
             © {new Date().getFullYear()} Apex Creator Management. All rights reserved.
           </p>
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            Boutique creator management
+            Get found. Land the deal.
           </p>
         </div>
       </div>

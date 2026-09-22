@@ -5,6 +5,7 @@ import { ApexLogo } from "./ApexLogo";
 
 const navLinks = [
   { href: "/#services", label: "Services" },
+  { href: "/#visibility", label: "Visibility" },
   { href: "/#brands", label: "Brands" },
   { href: "/#contact", label: "Contact" },
 ];

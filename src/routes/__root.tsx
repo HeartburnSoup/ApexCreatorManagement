@@ -20,6 +20,21 @@ const organizationSchema = {
   url: SITE_URL,
   logo: `${SITE_URL}/og-image.png`,
   email: "talent@apexcreatormanagement.com",
+  description:
+    "Boutique creator management agency offering talent representation, creator websites, and Google visibility so brands can find and book partnership-ready creators.",
+  knowsAbout: [
+    "Creator management",
+    "Influencer representation",
+    "Brand partnerships",
+    "Creator websites",
+    "Search visibility for creators",
+    "Sponsorship negotiation",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "talent@apexcreatormanagement.com",
+    contactType: "customer service",
+  },
 };
 
 function NotFoundComponent() {
@@ -84,35 +99,46 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Apex Creator Management — Boutique Talent Agency" },
+      {
+        title:
+          "Creator Management Agency | Website & Google Visibility for Brand Deals | Apex",
+      },
       {
         name: "description",
         content:
-          "Boutique talent management agency representing creators, influencers, athletes, and digital entrepreneurs.",
+          "Boutique creator management that builds your website and Google presence so brands find a partnership-ready creator. Representation, brand deals, and search visibility.",
+      },
+      {
+        name: "keywords",
+        content:
+          "creator management agency, influencer talent management, creator website, brand partnerships, Google visibility for creators, sponsorship representation",
       },
       { name: "author", content: "Apex Creator Management" },
-      { property: "og:title", content: "Apex Creator Management" },
+      { property: "og:title", content: "Apex Creator Management — Get Found. Land Brand Deals." },
       {
         property: "og:description",
-        content: "Building influential brands. Creating meaningful partnerships.",
+        content:
+          "Creator representation plus website and Google visibility — so brands can find you and book partnerships.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },
       { property: "og:site_name", content: "Apex Creator Management" },
-      { property: "og:image", content: `${SITE_URL}/og-image.png?v=4` },
+      { property: "og:image", content: `${SITE_URL}/og-image.png?v=5` },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       {
         property: "og:image:alt",
-        content: "Apex Creator Management — Building influential brands. Creating meaningful partnerships.",
+        content:
+          "Apex Creator Management — creator representation, websites, and Google visibility for brand partnerships",
       },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Apex Creator Management" },
+      { name: "twitter:title", content: "Apex Creator Management — Get Found. Land Brand Deals." },
       {
         name: "twitter:description",
-        content: "Building influential brands. Creating meaningful partnerships.",
+        content:
+          "Creator representation plus website and Google visibility — so brands can find you and book partnerships.",
       },
-      { name: "twitter:image", content: `${SITE_URL}/og-image.png?v=4` },
+      { name: "twitter:image", content: `${SITE_URL}/og-image.png?v=5` },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
