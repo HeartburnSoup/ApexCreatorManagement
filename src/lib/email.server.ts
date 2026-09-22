@@ -31,7 +31,7 @@ export async function sendContactEmail(payload: ContactEmailPayload) {
     from,
     to: [to],
     replyTo: payload.email,
-    subject: `[Apex] ${inquiryLabel} — ${payload.name}`,
+    subject: `[Apex] ${inquiryLabel}: ${payload.name}`,
     text: [
       `Name: ${payload.name}`,
       `Email: ${payload.email}`,

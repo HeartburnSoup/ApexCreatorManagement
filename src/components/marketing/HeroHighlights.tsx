@@ -1,5 +1,5 @@
 const highlights = [
-  { value: "360°", label: "Creator-first strategy", detail: "End-to-end representation built around your voice." },
+  { value: "360°", label: "Creator first strategy", detail: "End to end representation built around your voice." },
   { value: "24/7", label: "Partnership support", detail: "Responsive guidance from brief to signed deal." },
   { value: "Global", label: "Brand reach", detail: "Partners that scale beyond one campaign." },
 ];

@@ -158,7 +158,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
 
       {status === "success" && (
         <p className="text-sm text-foreground/80 editorial-caption">
-          Message sent — we respond within 1–2 business days.
+          Message sent. We respond within 1 to 2 business days.
         </p>
       )}
       {status === "error" && (

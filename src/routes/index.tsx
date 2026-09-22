@@ -10,7 +10,7 @@ const SITE_URL = "https://apexcreatormanagement.com";
 const PAGE_TITLE =
   "Creator Management Agency | Website & Google Visibility for Brand Deals | Apex";
 const PAGE_DESCRIPTION =
-  "Boutique creator management that builds your website and Google presence so brands find a partnership-ready creator. Representation, brand deals, and search visibility.";
+  "Boutique creator management that builds your website and Google presence so brands find a partnership ready creator. Representation, brand deals, and search visibility.";
 
 const faqItems = [
   {
@@ -19,7 +19,7 @@ const faqItems = [
   },
   {
     q: "Why does Google matter for brand partnerships?",
-    a: "CreatorIQ research found 63% of enterprise brands use Google Search or Google Alerts to vet creators. Social gets you noticed — search often decides the deal.",
+    a: "CreatorIQ research found 63% of enterprise brands use Google Search or Google Alerts to vet creators. Social gets you noticed. Search often decides the deal.",
   },
   {
     q: "Who is Apex for?",
@@ -27,7 +27,7 @@ const faqItems = [
   },
   {
     q: "How do I get started?",
-    a: "Send a short note about your platforms, audience, and goals. We typically reply within 1–2 business days.",
+    a: "Send a short note about your platforms, audience, and goals. We typically reply within 1 to 2 business days.",
   },
 ];
 
@@ -104,7 +104,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:image:alt",
         content:
-          "Apex Creator Management — creator representation, websites, and Google visibility for brand partnerships",
+          "Apex Creator Management: creator representation, websites, and Google visibility for brand partnerships",
       },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: PAGE_TITLE },
@@ -132,22 +132,22 @@ const services = [
   {
     n: "01",
     t: "Creator Representation",
-    d: "Hands-on talent management so you can create while we handle career strategy and deal flow.",
+    d: "Hands on talent management so you can create while we handle career strategy and deal flow.",
   },
   {
     n: "02",
     t: "Creator Website",
-    d: "We build a clean site brands can trust — bio, audience, past work, media kit, and a clear next step.",
+    d: "We build a clean site brands can trust: bio, audience, past work, media kit, and a clear next step.",
   },
   {
     n: "03",
     t: "Google Visibility",
-    d: "Own what shows when brands search your name: search presence, positioning, and partnership-ready signals.",
+    d: "Own what shows when brands search your name: search presence, positioning, and partnership ready signals.",
   },
   {
     n: "04",
-    t: "Brand Partnerships",
-    d: "Matched introductions with brands that fit your audience, values, and content — not just follower count.",
+    t: "Inbound Brand Deals",
+    d: "When brands reach out through your site, we help you evaluate the opportunity and move it forward.",
   },
   {
     n: "05",
@@ -176,8 +176,8 @@ const niches = [
 const whyUs = [
   {
     n: "01",
-    t: "Representation + infrastructure",
-    d: "Most agencies stop at intros. We also build the site and search presence brands check next.",
+    t: "Representation plus infrastructure",
+    d: "Most agencies stop at social. We also build the site and search presence brands check next.",
   },
   {
     n: "02",
@@ -186,26 +186,47 @@ const whyUs = [
   },
   {
     n: "03",
-    t: "Partnership-ready proof",
-    d: "Audience, values, past work, and contact — in one place brands can evaluate in minutes.",
+    t: "Partnership ready proof",
+    d: "Audience, values, past work, and contact in one place brands can evaluate in minutes.",
   },
   {
     n: "04",
-    t: "Long-term leverage",
+    t: "Long term leverage",
     d: "Every deal and campaign strengthens the brand asset you own: your name on Google.",
   },
 ];
 
 const stats = [
-  { value: "63%", label: "Enterprise brands Google creators", detail: "CreatorIQ, 2025–26" },
-  { value: "51%", label: "Mid-market brands do the same", detail: "Search & Alerts vetting" },
-  { value: "3×", label: "Vetting tools used on average", detail: "Social alone is not enough" },
+  {
+    value: "63%",
+    label: "of enterprise brands search creators on Google",
+    detail: "CreatorIQ, 2025 to 2026",
+  },
+  {
+    value: "51%",
+    label: "of mid-market brands do the same",
+    detail: "Search and Alerts vetting",
+  },
+  {
+    value: "3×",
+    label: "vetting tools used on average",
+    detail: "Social alone is not enough",
+  },
 ];
 
-const brandPillars = [
-  { t: "Discoverable", d: "Creators with clear sites and search presence — easy to evaluate fast." },
-  { t: "Aligned", d: "Matched to audience fit and brand safety, not raw follower counts." },
-  { t: "Accountable", d: "One point of contact from outreach through campaign delivery." },
+const dealPillars = [
+  {
+    t: "Found on Google",
+    d: "Your site and search presence make it easy for brands to evaluate you fast.",
+  },
+  {
+    t: "Clear next step",
+    d: "A professional contact path so serious inquiries land in one place.",
+  },
+  {
+    t: "Deal support",
+    d: "When a brand reaches out, we help you review terms and close with confidence.",
+  },
 ];
 
 function EyebrowDot({ children }: { children: React.ReactNode }) {
@@ -262,7 +283,7 @@ function Index() {
               <span className="shimmer-text">Land the partnership.</span>
             </h1>
             <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg animate-reveal [animation-delay:80ms]">
-              Apex represents creators — and builds the website and Google presence that turns
+              Apex represents creators and builds the website and Google presence that turns
               brand interest into signed deals.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row animate-reveal [animation-delay:140ms]">
@@ -361,7 +382,7 @@ function Index() {
                 Talent management built for brand deals
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Representation, a creator website, and Google visibility — so brands can find,
+                Representation, a creator website, and Google visibility so brands can find,
                 trust, and book you.
               </p>
             </div>
@@ -390,7 +411,7 @@ function Index() {
               Looking for creator representation?
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Emerging or established — if you want brand partnerships and a professional online
+              Emerging or established, if you want brand partnerships and a professional online
               footprint to back them up, we want to hear from you.
             </p>
             <div className="mt-8 flex flex-wrap gap-2">
@@ -431,29 +452,30 @@ function Index() {
           </div>
         </section>
 
-        {/* For brands */}
-        <section id="brands" className="px-5 sm:px-8">
+        {/* Inbound brand deals */}
+        <section id="deals" className="px-5 sm:px-8">
           <div className="mx-auto max-w-6xl page-section section-divider">
             <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-smoke/60 via-background to-background">
               <div className="grid gap-10 p-8 sm:p-10 lg:grid-cols-2 lg:p-14">
                 <div>
-                  <EyebrowDot>For brands</EyebrowDot>
+                  <EyebrowDot>Brand deals</EyebrowDot>
                   <h2 className="hero-display mt-4 text-3xl text-white sm:text-5xl">
-                    Partner with creators who are ready to evaluate.
+                    When brands find you, we help you close.
                   </h2>
                   <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
-                    Need creators who are discoverable, brand-safe, and easy to brief? We match,
-                    negotiate, and manage partnerships that fit your goals.
+                    We do not cold pitch brand lists. Your site and Google presence bring the
+                    interest in. When a partnership inquiry lands, we help you evaluate it,
+                    negotiate terms, and get the deal done.
                   </p>
                   <a
                     href="#contact"
                     className="mt-8 inline-flex items-center gap-3 text-sm font-bold uppercase tracking-wider text-brand-fire transition-colors hover:text-white"
                   >
-                    Start a partnership →
+                    Talk about deal support →
                   </a>
                 </div>
                 <div className="grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
-                  {brandPillars.map((item) => (
+                  {dealPillars.map((item) => (
                     <div key={item.t} className="bg-background p-6">
                       <h3 className="text-sm font-black uppercase tracking-[0.14em] text-white">
                         {item.t}
@@ -486,11 +508,12 @@ function Index() {
             <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
               <div>
                 <h2 className="hero-display text-3xl text-white sm:text-5xl">
-                  Ready to get found — and booked?
+                  Ready to get found and booked?
                 </h2>
                 <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  Tell us about your platforms and goals. Creator representation, website +
-                  search visibility, or brand collaborations — we reply within 1–2 business days.
+                  Tell us about your platforms and goals. Creator representation, website and
+                  search visibility, or inbound brand deal support. We reply within 1 to 2
+                  business days.
                 </p>
                 <p className="mt-8 text-sm font-medium text-white">
                   <span className="font-bold text-brand-fire">Email </span>

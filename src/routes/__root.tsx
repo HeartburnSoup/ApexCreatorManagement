@@ -21,7 +21,7 @@ const organizationSchema = {
   logo: `${SITE_URL}/og-image.png`,
   email: "talent@apexcreatormanagement.com",
   description:
-    "Boutique creator management agency offering talent representation, creator websites, and Google visibility so brands can find and book partnership-ready creators.",
+    "Boutique creator management agency offering talent representation, creator websites, and Google visibility so brands can find and book partnership ready creators.",
   knowsAbout: [
     "Creator management",
     "Influencer representation",
@@ -106,7 +106,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Boutique creator management that builds your website and Google presence so brands find a partnership-ready creator. Representation, brand deals, and search visibility.",
+          "Boutique creator management that builds your website and Google presence so brands find a partnership ready creator. Representation, brand deals, and search visibility.",
       },
       {
         name: "keywords",
@@ -114,11 +114,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "creator management agency, influencer talent management, creator website, brand partnerships, Google visibility for creators, sponsorship representation",
       },
       { name: "author", content: "Apex Creator Management" },
-      { property: "og:title", content: "Apex Creator Management — Get Found. Land Brand Deals." },
+      { property: "og:title", content: "Apex Creator Management: Get Found. Land Brand Deals." },
       {
         property: "og:description",
         content:
-          "Creator representation plus website and Google visibility — so brands can find you and book partnerships.",
+          "Creator representation plus website and Google visibility so brands can find you and book partnerships.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },
@@ -129,14 +129,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:image:alt",
         content:
-          "Apex Creator Management — creator representation, websites, and Google visibility for brand partnerships",
+          "Apex Creator Management: creator representation, websites, and Google visibility for brand partnerships",
       },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Apex Creator Management — Get Found. Land Brand Deals." },
+      { name: "twitter:title", content: "Apex Creator Management: Get Found. Land Brand Deals." },
       {
         name: "twitter:description",
         content:
-          "Creator representation plus website and Google visibility — so brands can find you and book partnerships.",
+          "Creator representation plus website and Google visibility so brands can find you and book partnerships.",
       },
       { name: "twitter:image", content: `${SITE_URL}/og-image.png?v=5` },
     ],

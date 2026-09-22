@@ -8,7 +8,7 @@ export function SiteFooter() {
           <div className="max-w-sm">
             <ApexLogo size="sm" subline="Creator Management" />
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              Creator representation, websites, and Google visibility — so brands can find you
+              Creator representation, websites, and Google visibility so brands can find you
               and book partnerships.
             </p>
             <a
@@ -26,8 +26,8 @@ export function SiteFooter() {
             <a href="/#visibility" className="hover:text-foreground transition-colors">
               Visibility
             </a>
-            <a href="/#brands" className="hover:text-foreground transition-colors">
-              Brands
+            <a href="/#deals" className="hover:text-foreground transition-colors">
+              Deals
             </a>
             <a href="/#contact" className="hover:text-foreground transition-colors">
               Apply
