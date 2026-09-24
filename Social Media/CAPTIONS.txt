@@ -68,10 +68,10 @@ File: posts/04-what-we-do.png
 ------------------------------------------------------------
 What Apex does for creators:
 
-01 Creator Representation
+01 Google Visibility
 02 Creator Website
-03 Google Visibility
-04 Inbound Brand Deals
+03 Inbound Brand Deals
+04 Creator Representation
 05 Deal Negotiation
 06 Campaign Support
 

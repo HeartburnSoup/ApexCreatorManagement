@@ -39,10 +39,11 @@ const serviceSchema = {
   description: PAGE_DESCRIPTION,
   areaServed: "Worldwide",
   serviceType: [
+    "Search visibility for creators",
+    "Creator website development",
+    "Brand partnership support",
     "Creator talent management",
     "Influencer representation",
-    "Creator website development",
-    "Brand partnership visibility",
     "Sponsorship negotiation",
   ],
   provider: {
@@ -131,8 +132,8 @@ const platforms = [
 const services = [
   {
     n: "01",
-    t: "Creator Representation",
-    d: "Hands on talent management so you can create while we handle career strategy and deal flow.",
+    t: "Google Visibility",
+    d: "Own what shows when brands search your name: search presence, positioning, and partnership ready signals.",
   },
   {
     n: "02",
@@ -141,13 +142,13 @@ const services = [
   },
   {
     n: "03",
-    t: "Google Visibility",
-    d: "Own what shows when brands search your name: search presence, positioning, and partnership ready signals.",
+    t: "Inbound Brand Deals",
+    d: "When brands reach out through your site, we help you evaluate the opportunity and move it forward.",
   },
   {
     n: "04",
-    t: "Inbound Brand Deals",
-    d: "When brands reach out through your site, we help you evaluate the opportunity and move it forward.",
+    t: "Creator Representation",
+    d: "Hands on talent management so you can create while we handle career strategy and deal flow.",
   },
   {
     n: "05",
